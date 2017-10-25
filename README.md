@@ -174,38 +174,6 @@ because it has already been applied in the chat module.
 
 For the same reason there is no need to add the `google-services.json` 
 
-### Chat Settings
-
-Copy `/chat/src/res/values/chat_settings.xml` to your `/values/` folder.
-
-This file contains some Chat21 SDK settings. 
-
-The ***mandatory*** settings to override are: 
-
-- ***root*** : the root node of Database 
-
-    You can find it in `FirebaseConsole -> Select your App -> Database`
-    ```
-    <string name="root" translatable="false"></string>
-    ```
-
-- ***firebase_storage_reference*** : the endpoint of your Firebase Data Storage
-    
-     You can find it in `FirebaseConsole -> Select your App -> Storage` (it is something like ***gs://<APP_ID>.appspot.com***)
-    
-    ```
-    <string name="firebase_storage_reference" translatable="false"></string>
-    ```
-
-- ***tenant*** : the AppId
-
-    ***the only characters allowed are lower case letters and underscores*** 
-   
-    ```
-    <string name="tenant" translatable="false">default</string>
-    ```
-
-
 ### AndroidManifest.xml
 
 Let's set up  the AndroidManifest.xml
@@ -266,7 +234,51 @@ Your `<application></application>` should be something like this:
 </application>
 ```
 
-### Application class - Chat21 SDK initialization
+### Application class 
 
 Create a class which extends the [MultiDexApplication](https://developer.android.com/reference/android/support/multidex/MultiDexApplication.html) class.
 
+### Chat21 SDK initialization
+
+The Chat21 SDK provide a ***Chat.Configuration*** object which allows to set some custom behaviour 
+and settings for your chat.
+
+To create a new instance of Chat21 SDK you have to create your own configuration (using the
+Chat21 SDK Chat.Configuration.Builder) and use it as paramater for the method 
+
+`Chat.initialize(configuration);`
+
+
+#### From activity
+
+```
+    String appId = "chat21_demo";
+
+    // create a chat configurations object
+    Chat.Configuration configuration = new Chat.Configuration
+            .Builder(getActivity().getApplicationContext(), loggedUser, contacts)
+            .withTenant(appId)
+            .build();
+
+    // init and start the chat
+    Chat.initialize(configuration);
+```
+
+
+#### From fragment
+
+```
+    // retrieve the tenant from the settings
+    String appId = "chat21_demo";
+    
+    // create a chat configurations object
+    Chat.Configuration configuration = new Chat.Configuration
+            .Builder(getActivity().getApplicationContext(), loggedUser, contacts)
+            .startFromConversationFragment(getChildFragmentManager(),
+                    container.getId())
+            .withTenant(appId)
+            .build();
+    
+    // init and start the chat
+    Chat.initialize(configuration);
+```
