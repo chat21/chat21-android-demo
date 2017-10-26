@@ -2,17 +2,12 @@
 
 ## See in action
 
-![Alt text](https://image.ibb.co/dKy9wR/Screenshot_20171026_120924.png "Optional title")
+<img src="https://image.ibb.co/dKy9wR/Screenshot_20171026_120924.png" width="250"> | <img src="https://image.ibb.co/jzFpwR/Screenshot_20171026_120927.png" width="250"> | <img src="https://image.ibb.co/kQuhGR/Screenshot_20171026_120933.png" width="250">
 
-![Alt text](https://image.ibb.co/jzFpwR/Screenshot_20171026_120927.png "Optional title")
 
-![Alt text](https://image.ibb.co/kQuhGR/Screenshot_20171026_120933.png "Optional title")
+<img src="https://image.ibb.co/c47PVm/Screenshot_20171026_120940.png" width="250"> | <img src="https://image.ibb.co/e8M7i6/Screenshot_20171026_120951.png" width="250"> | <img src="https://image.ibb.co/cUptO6/Screenshot_20171026_121106.png" width="250">
 
-![Alt text](https://image.ibb.co/c47PVm/Screenshot_20171026_120940.png "Optional title")
 
-![Alt text](https://image.ibb.co/e8M7i6/Screenshot_20171026_120951.png "Optional title")
-
-![Alt text](https://image.ibb.co/cUptO6/Screenshot_20171026_121106.png "Optional title")
 
 ## Pre requisites
 It is assumed that you are using an existing Firebase project or that you have created a new one 
