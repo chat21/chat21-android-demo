@@ -1,5 +1,19 @@
 # Chat21 SDK Documentation 
 
+## See in action
+
+![Alt text](https://preview.ibb.co/hWZ7GR/Screenshot_20171026_120924.png "Optional title")
+
+![Alt text](https://preview.ibb.co/mZwnGR/Screenshot_20171026_120927.png "Optional title")
+
+![Alt text](https://preview.ibb.co/gwy1bR/Screenshot_20171026_120933.png "Optional title")
+
+![Alt text](https://preview.ibb.co/f3iZwR/Screenshot_20171026_120940.png "Optional title")
+
+![Alt text](https://preview.ibb.co/jeYpVm/Screenshot_20171026_120951.png "Optional title")
+
+![Alt text](https://preview.ibb.co/n7B9Vm/Screenshot_20171026_121106.png "Optional title")
+
 ## Pre requisites
 It is assumed that you are using an existing Firebase project or that you have created a new one 
 on the Firebase console.
