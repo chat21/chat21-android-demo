@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "it.frontiere21.android.chat21.chat21demo"
         minSdkVersion 19
-        targetSdkVersion 26
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
