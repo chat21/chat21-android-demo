@@ -87,12 +87,12 @@ public class TabActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
 
             if (position == 0) {
-                return HomeFragment.newInstance(getPageTitle(position).toString());
+                return HomeFragment.newInstance();
             } else if (position == 1) {
                 return ChatFragment.newInstance();
             } else {
                 // default load home
-                return HomeFragment.newInstance(getPageTitle(position).toString());
+                return HomeFragment.newInstance();
             }
         }
 

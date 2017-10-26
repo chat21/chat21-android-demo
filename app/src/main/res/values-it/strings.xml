@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Chat21Demo</string>
+    <string name="action_settings">Impostazioni</string>
+
+    <string name="fragment_tab_home_direct_message_button_label">Messaggio diretto</string>
+    <string name="fragment_tab_home_new_chat_activity_button_label">Avvia in activity</string>
+    <string name="fragment_tab_home_group_conversation_button_label">Chat di gruppo</string>
+</resources>

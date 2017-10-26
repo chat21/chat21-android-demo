@@ -1,36 +1,28 @@
 package it.frontiere21.android.chat21.chat21demo;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
 
-/**
- * A placeholder fragment containing a simple view.
- */
-public class HomeFragment extends Fragment {
-    /**
-     * The fragment argument representing the section number for this
-     * fragment.
-     */
-    private static final String ARG_FRAGMENT_NAME = "fragment_name";
+import it.smart21.android.chat.Chat;
+import it.smart21.android.chat.conversations.utils.ConversationUtils;
+import it.smart21.android.chat.dao.message.MessageDAO;
+import it.smart21.android.chat.dao.message.MessageDAOImpl;
+
+public class HomeFragment extends Fragment implements View.OnClickListener {
 
     public HomeFragment() {
     }
 
     /**
-     * Returns a new instance of this fragment for the given section
-     * number.
+     * Returns a new instance of this fragment.
      */
-    public static HomeFragment newInstance(String fragmentName) {
+    public static HomeFragment newInstance() {
         HomeFragment fragment = new HomeFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_FRAGMENT_NAME, fragmentName);
-        fragment.setArguments(args);
         return fragment;
     }
 
@@ -38,23 +30,86 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_tab_home, container, false);
-        TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-        textView.setText(getArgFragmentName());
 
-        FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        // direct message activity
+        Button mStartDirectMessage = (Button) rootView.findViewById(R.id.direct_message);
+        mStartDirectMessage.setOnClickListener(this);
 
+        // start the chat with an activity
+        Button mStartChatActivity = (Button) rootView.findViewById(R.id.start_chat_activity);
+        mStartChatActivity.setOnClickListener(this);
+
+        // start group chat
+        Button mStartGroupChat = (Button) rootView.findViewById(R.id.start_group_chat);
+        mStartGroupChat.setOnClickListener(this);
 
         return rootView;
     }
 
-    private String getArgFragmentName() {
-        return getArguments().getString(ARG_FRAGMENT_NAME);
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+
+        if (id == R.id.direct_message) {
+            onDirectMessageAction();
+        } else if (id == R.id.start_chat_activity) {
+            onStartChatActivityAction();
+        } else if (id == R.id.start_group_chat) {
+            onGroupConversationAction();
+        } else if (id == R.id.start_group_chat) {
+            onGroupConversationAction();
+        }
+    }
+
+    private void onDirectMessageAction() {
+        String appId = "chat21_demo";
+
+    // generates the conversation id it wants to start
+    String conversationId = ConversationUtils.getConversationId(
+            DummyDataManager.getLoggedUser().getId(),
+            DummyDataManager.getContacts().get(1).getId());
+
+    // create a chat configurations object
+    Chat.Configuration configuration = new Chat.Configuration
+            .Builder(getActivity().getApplicationContext(),
+            DummyDataManager.getLoggedUser(), DummyDataManager.getContacts())
+            .withTenant(appId)
+            .startFromConversationId(conversationId)
+            .build();
+
+    // init and start the chat
+        Chat.initialize(configuration);
+}
+
+    private void onStartChatActivityAction() {
+        String appId = "chat21_demo";
+
+        // create a chat configurations object
+        Chat.Configuration configuration = new Chat.Configuration
+                .Builder(getActivity().getApplicationContext(),
+                DummyDataManager.getLoggedUser(), DummyDataManager.getContacts())
+                .withTenant(appId)
+                .build();
+
+        // init and start the chat
+        Chat.initialize(configuration);
+    }
+
+    private void onGroupConversationAction() {
+        String appId = "chat21_demo";
+
+        // set a hard coded existent group id
+        String conversationId = "-KxN3dbaiB3r_-7bUckt";
+
+        // create a chat configurations object
+        Chat.Configuration configuration = new Chat.Configuration
+                .Builder(getActivity().getApplicationContext(),
+                DummyDataManager.getLoggedUser(), DummyDataManager.getContacts())
+                .withTenant(appId)
+                .startFromConversationId(conversationId)
+                .build();
+
+        // init and start the chat
+        Chat.initialize(configuration);
     }
 }

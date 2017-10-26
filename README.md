@@ -180,6 +180,10 @@ Let's set up  the AndroidManifest.xml
 
 #### Permissions
 
+Runtime permissions are currently not supported.
+
+Then you must declare the permissions in the manifest and set the targetSdkVersion at ***API 22*** 
+
 The Chat21 SDK needs the following permissions: 
 
 - Required to perform messaging:
@@ -194,6 +198,8 @@ The Chat21 SDK needs the following permissions:
 
     ```
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     ```
 
 #### Application
@@ -282,3 +288,16 @@ Chat21 SDK Chat.Configuration.Builder) and use it as paramater for the method
     // init and start the chat
     Chat.initialize(configuration);
 ```
+
+## Limitations
+
+
+The [sample project](https://github.com/chat21/chat21-android-demo)  uses fake users that do not have real authentication.
+
+For this reason, in the demo, it is ***not*** possible:
+
+- send pictures
+
+- send / receive push notifications
+
+However, image forwarding and push notifications ***are supported*** with real users.
