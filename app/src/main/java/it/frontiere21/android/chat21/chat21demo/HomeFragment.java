@@ -99,7 +99,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         String appId = "chat21_demo";
 
         // set a hard coded existent group id
-        String conversationId = "-KxN3dbaiB3r_-7bUckt";
+        String conversationId = "-KxSPS-GivDyEYDvemoD";
 
         // create a chat configurations object
         Chat.Configuration configuration = new Chat.Configuration
