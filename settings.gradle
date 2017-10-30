@@ -2,6 +2,3 @@ include ':app'
 
 include ':chat'
 project(':chat').projectDir = new File('../chat21-android-sdk/chat/')
-
-include ':emoji'
-project(':emoji').projectDir = new File('../chat21-android-emojilibrary/emoji/')

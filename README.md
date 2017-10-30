@@ -18,8 +18,7 @@ if it was not done, follow the [Firebase Documentation](https://firebase.google.
 
 ### Gradle Scripts
 
-Download [chat21 sdk](https://bitbucket.org/frontiere21/chat21-android-sdk)  and 
-[chat21-emojilibrary](https://bitbucket.org/frontiere21/chat21-android-emojilibrary) in your work directory. 
+Download [chat21 sdk](https://bitbucket.org/frontiere21/chat21-android-sdk) in your work directory. 
 
 #### /project/build.gradle
 
@@ -33,7 +32,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.0.0'
         classpath 'com.google.gms:google-services:3.0.0'
     }
 }
@@ -63,14 +62,9 @@ Open your settings.gradle, paste these two lines and sync
 ```
 include ':chat'
 project(':chat').projectDir = new File('<CHAT_LIBRARY_FOLDER_PATH>/chat21-android-sdk/chat/')
-
-include ':emoji'
-project(':emoji').projectDir = new File('<EMOJI_LIBRARY_FOLDER_PATH>/chat21-android-emojilibrary/emoji/')
 ```
 
-replace `<EMOJI_LIBRARY_FOLDER_PATH>` with your chat21 folder and emojilibrary folder.
-
-this allow you to load android projects from the file system
+replace `<CHAT_LIBRARY_FOLDER_PATH>` with your Chat21 SDK folder path.
 
 #### /project/app/build.gradle
 
@@ -98,11 +92,15 @@ android {
     defaultConfig {
         applicationId "it.frontiere21.android.chat21.chat21demo"
         minSdkVersion 19
-        targetSdkVersion 26
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+
+        // vectors drawable support
         vectorDrawables.useSupportLibrary = true
         resConfigs "auto"
+        
+        // multidex support
         multiDexEnabled true
     }
 
