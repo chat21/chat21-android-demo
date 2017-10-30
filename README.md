@@ -1,6 +1,6 @@
 # Chat21 SDK Documentation 
 
-## See in action
+## Let's see it in action
 
 <img src="https://image.ibb.co/dKy9wR/Screenshot_20171026_120924.png" width="250"> | <img src="https://image.ibb.co/jzFpwR/Screenshot_20171026_120927.png" width="250"> | <img src="https://image.ibb.co/kQuhGR/Screenshot_20171026_120933.png" width="250">
 
