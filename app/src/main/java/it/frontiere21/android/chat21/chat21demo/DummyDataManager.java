@@ -14,11 +14,13 @@ import it.smart21.android.chat.user.models.IChatUser;
 
 public class DummyDataManager {
 
+    private static final int LOGGED_USER_ID = 0;
+
     public static IChatUser getLoggedUser() {
         PersonGenerator generator = new PersonGenerator();
 
-        IChatUser loggedUser = convertPersonToChatUser(0, generator.getPeople().get(0));
-        loggedUser.setId(0 + "_" + loggedUser.getId()); // ensures that id is unique
+        IChatUser loggedUser = convertPersonToChatUser(LOGGED_USER_ID,
+                generator.getPeople().get(LOGGED_USER_ID));
 
         return loggedUser;
     }
@@ -34,7 +36,6 @@ public class DummyDataManager {
 
             IChatUser chatUser = convertPersonToChatUser(i, generator.getPeople().get(i));
 
-
             contacts.add(chatUser);
         }
 
@@ -44,7 +45,6 @@ public class DummyDataManager {
     private static IChatUser convertPersonToChatUser(int counter, PersonGenerator.Person person) {
         IChatUser chatUser = new ChatUser();
 
-        chatUser.setId(counter + "_" + chatUser.getId()); // ensures that id is unique
         chatUser.setEmail(person.getEmail());
         chatUser.setFullName(person.getName() + " " + person.getSurname());
         chatUser.setId(person.getName().toLowerCase() + "_" + person.getSurname().toLowerCase());
