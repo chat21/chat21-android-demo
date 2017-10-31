@@ -247,10 +247,6 @@ Your `<application></application>` should be something like this:
 </application>
 ```
 
-### Application class 
-
-Create a class which extends the [MultiDexApplication](https://developer.android.com/reference/android/support/multidex/MultiDexApplication.html) class.
-
 ### Chat21 SDK initialization
 
 The Chat21 SDK provide a ***Chat.Configuration*** object which allows to set some custom behaviour 

@@ -25,12 +25,6 @@
             android:layout_height="wrap_content"
             android:text="@string/fragment_tab_home_new_chat_activity_button_label" />
 
-        <Button
-            android:id="@+id/start_group_chat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/fragment_tab_home_group_conversation_button_label" />
-
     </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>

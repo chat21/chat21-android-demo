@@ -5,12 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-
-import java.util.List;
 
 import it.smart21.android.chat.Chat;
-import it.smart21.android.chat.user.models.IChatUser;
 
 /**
  * A fragment containing the chat.
@@ -40,39 +36,9 @@ public class ChatFragment extends Fragment {
 
         setHasOptionsMenu(false); // disable fragment option menu
 
-        // container in which inflat the chat
-        FrameLayout mContainer = (FrameLayout) rootView.findViewById(R.id.container);
-
-        // retrieves the logged user and contacts list
-        startChat(mContainer, DummyDataManager.getLoggedUser(), DummyDataManager.getContacts());
+        // starts the chat inside a container
+        Chat.showConversationsListFragment(getChildFragmentManager(), R.id.container);
 
         return rootView;
-    }
-
-    // starts the chat inside a container
-    private void startChat(View container, IChatUser loggedUser, List<IChatUser> contacts) {
-
-        try {
-            // retrieve the tenant from the settings
-            String appId = "chat21_demo";
-
-            // create a chat configurations object
-            Chat.Configuration configuration = new Chat.Configuration
-                    .Builder(getActivity().getApplicationContext(), loggedUser, contacts)
-                    .startFromConversationFragment(getChildFragmentManager(),
-                            container.getId())
-                    .withTenant(appId)
-                    .build();
-
-            // init and start the chat
-            Chat.initialize(configuration);
-
-            container.setVisibility(View.VISIBLE);
-
-        } catch (Exception e) {
-            // TODO: 25/10/17
-
-            container.setVisibility(View.GONE);
-        }
     }
 }

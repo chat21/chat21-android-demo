@@ -4,5 +4,4 @@
 
     <string name="fragment_tab_home_direct_message_button_label">Direct Message</string>
     <string name="fragment_tab_home_new_chat_activity_button_label">Start with an activity</string>
-    <string name="fragment_tab_home_group_conversation_button_label">Group chat</string>
 </resources>
