@@ -9,6 +9,8 @@ import it.smart21.android.chat.Chat;
  */
 
 public class AppContext extends Application {
+    private static final String APP_ID = "chat21_demo";
+
     private static AppContext instance;
 
     @Override
@@ -20,12 +22,13 @@ public class AppContext extends Application {
     }
 
     private void initChatSDK(Application context) {
-        String appId = "chat21_demo";
 
         // create a chat configurations object
         Chat.Configuration chatConfiguration = new Chat.Configuration
-                .Builder(context, appId,
-                "userId", "email", "fullName")
+                .Builder(context, APP_ID,
+                DummyDataManager.getLoggedUser().getId(),
+                DummyDataManager.getLoggedUser().getEmail(),
+                DummyDataManager.getLoggedUser().getFullName())
 //                .contacts(DummyDataManager.getContacts())
                 .build();
 
