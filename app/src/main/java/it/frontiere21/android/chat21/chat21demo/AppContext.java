@@ -19,10 +19,6 @@ public class AppContext extends Application {
         initChatSDK(instance);
     }
 
-    public static AppContext getInstance() {
-        return instance;
-    }
-
     private void initChatSDK(Application context) {
         String appId = "chat21_demo";
 
@@ -33,7 +29,7 @@ public class AppContext extends Application {
 //                .contacts(DummyDataManager.getContacts())
                 .build();
 
-//        chatConfiguration.setContacts(DummyDataManager.getContacts());
+        chatConfiguration.setContacts(DummyDataManager.getContacts());
 
         // init and start the chat
         Chat.initialize(chatConfiguration);
