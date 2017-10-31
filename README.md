@@ -2,11 +2,9 @@
 
 ## Let's see it in action
 
-<img src="https://image.ibb.co/dKy9wR/Screenshot_20171026_120924.png" width="250"> | <img src="https://image.ibb.co/jzFpwR/Screenshot_20171026_120927.png" width="250"> | <img src="https://image.ibb.co/kQuhGR/Screenshot_20171026_120933.png" width="250">
-
+<img src="http://preview.ibb.co/cS6ZJG/Screenshot_20171031_124451.png" width="250"> | <img src="https://image.ibb.co/jzFpwR/Screenshot_20171026_120927.png" width="250"> | <img src="https://image.ibb.co/kQuhGR/Screenshot_20171026_120933.png" width="250">
 
 <img src="https://image.ibb.co/c47PVm/Screenshot_20171026_120940.png" width="250"> | <img src="https://image.ibb.co/e8M7i6/Screenshot_20171026_120951.png" width="250"> | <img src="https://image.ibb.co/cUptO6/Screenshot_20171026_121106.png" width="250">
-
 
 
 ## Pre requisites
@@ -70,11 +68,8 @@ replace `<CHAT_LIBRARY_FOLDER_PATH>` with your Chat21 SDK folder path.
 
 ##### Android
 - Set yout minimun SDK at least at ***API 19*** 
-
 - enable support for vector drawables
-
 - enable multidex support
-
 - exclude from ***packagingOptions***:
   - 'META-INF/LICENSE'
   - 'META-INF/NOTICE'
@@ -253,43 +248,73 @@ The Chat21 SDK provide a ***Chat.Configuration*** object which allows to set som
 and settings for your chat.
 
 To create a new instance of Chat21 SDK you have to create your own configuration (using the
-Chat21 SDK Chat.Configuration.Builder) and use it as paramater for the method 
-
-`Chat.initialize(configuration);`
-
-
-#### From activity
+Chat21 SDK Chat.Configuration.Builder) and use it as paramater for the method `Chat.initialize(configuration);` 
 
 ```
-    String appId = "chat21_demo";
+// create a chat configurations object
+Chat.Configuration chatConfiguration = new Chat.Configuration
+        .Builder(context, APP_ID, <LOGGED_USER_ID>, <LOGGED_USER_EMAIL>, <LOGGED_USER_FULLNAME>
+        .build();
+        
 
-    // create a chat configurations object
-    Chat.Configuration configuration = new Chat.Configuration
-            .Builder(getActivity().getApplicationContext(), loggedUser, contacts)
-            .withTenant(appId)
-            .build();
+// init and start the chat
+Chat.initialize(chatConfiguration);
+```
 
-    // init and start the chat
-    Chat.initialize(configuration);
+Replace:
+
+- `<LOGGED_USER_ID>` with your logged user id;
+- `<LOGGED_USER_EMAIL>` with your logged user email;
+- `<LOGGED_USER_FULLNAME>` with your logged user display name;
+
+You can set your own contact list directly with the Chat.Configuration.Builder
+
+```
+Chat.Configuration chatConfiguration = new Chat.Configuration
+        .Builder(context, APP_ID, <LOGGED_USER_ID>, <LOGGED_USER_EMAIL>, <LOGGED_USER_FULLNAME>
+        .contatcs(<CONTACT_LIST>)
+        .build();
+```
+
+or with the optional configuration
+
+```
+ chatConfiguration.setContacts(<CONTACT_LIST>);
+```
+
+replace:
+- `<CONTACT_LIST>` with a list of IChatUser
+
+#### Launch with an activity
+
+```
+Chat.showConversationsListActivity();
+
 ```
 
 
-#### From fragment
+#### Launch with a fragment
+
+You have to create a fragment with a container inside
 
 ```
-    // retrieve the tenant from the settings
-    String appId = "chat21_demo";
+<android.support.design.widget.CoordinatorLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     
-    // create a chat configurations object
-    Chat.Configuration configuration = new Chat.Configuration
-            .Builder(getActivity().getApplicationContext(), loggedUser, contacts)
-            .startFromConversationFragment(getChildFragmentManager(),
-                    container.getId())
-            .withTenant(appId)
-            .build();
-    
-    // init and start the chat
-    Chat.initialize(configuration);
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</android.support.design.widget.CoordinatorLayout>
+```
+
+Now you can show your chat with the following method:
+
+```
+ Chat.showConversationsListFragment(getChildFragmentManager(), R.id.container);
+
 ```
 
 ## Limitations
@@ -300,7 +325,6 @@ The [sample project](https://github.com/chat21/chat21-android-demo)  uses fake u
 For this reason, in the demo, it is ***not*** possible:
 
 - send pictures
-
 - send / receive push notifications
 
 However, image forwarding and push notifications ***are supported*** with real users.
