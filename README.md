@@ -2,7 +2,7 @@
 
 ## Let's see it in action
 
-<img src="http://preview.ibb.co/cS6ZJG/Screenshot_20171031_124451.png" width="250"> | <img src="https://image.ibb.co/jzFpwR/Screenshot_20171026_120927.png" width="250"> | <img src="https://image.ibb.co/kQuhGR/Screenshot_20171026_120933.png" width="250">
+<img src="http://preview.ibb.co/dCHoCb/Screenshot_20171031_131943.png" width="250"> | <img src="https://image.ibb.co/jzFpwR/Screenshot_20171026_120927.png" width="250"> | <img src="https://image.ibb.co/kQuhGR/Screenshot_20171026_120933.png" width="250">
 
 <img src="https://image.ibb.co/c47PVm/Screenshot_20171026_120940.png" width="250"> | <img src="https://image.ibb.co/e8M7i6/Screenshot_20171026_120951.png" width="250"> | <img src="https://image.ibb.co/cUptO6/Screenshot_20171026_121106.png" width="250">
 
