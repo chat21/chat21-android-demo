@@ -91,15 +91,17 @@ Your android should be like this:
 
 ```
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+   . . . 
     
     defaultConfig {
-        applicationId "it.frontiere21.android.chat21.chat21demo"
+    
+        . . . 
+        
         minSdkVersion 19
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        
+         . . .
+         
 
         // vectors drawable support
         vectorDrawables.useSupportLibrary = true
@@ -108,13 +110,7 @@ android {
         // multidex support
         multiDexEnabled true
     }
-    
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+
     
     packagingOptions {
         exclude 'META-INF/LICENSE'
@@ -125,24 +121,15 @@ android {
     }
     
     dependencies {
-        compile fileTree(dir: 'libs', include: ['*.jar'])
     
         // multidex
         compile 'com.android.support:multidex:1.0.1' 
         
-        // android
-        compile 'com.android.support:appcompat-v7:26.+'
-        compile 'com.android.support:design:26.+'
-        compile 'com.android.support:cardview-v7:26.+'
         compile 'com.android.support:support-vector-drawable:26.+'
     
         // google play service
         compile 'com.google.android.gms:play-services:11.4.0'
-    
-        // user dependencies
-        compile 'com.github.bumptech.glide:glide:3.8.0' // image loading
-        // Required only if Facebook login support is required
-        compile('com.facebook.android:facebook-android-sdk:4.22.1')
+   
         // chat
         compile project(':chat')
         
@@ -189,8 +176,6 @@ Contrary to what is described in the Firebase documentation, you do ***not*** ne
 `apply plugin: 'com.google.gms.google-services'` 
 
 because it has already been applied in the chat module.
-
-For the same reason there is no need to add the `google-services.json` 
 
 ### AndroidManifest.xml
 
@@ -317,7 +302,7 @@ Chat.showConversationsListActivity();
 ```
 
 <div style="text-align:right">
-    <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/java/it/frontiere21/android/chat21/chat21demo/HomeFragment.java">HomeFragment.java
+    <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/java/it/frontiere21/android/chat21/chat21demo/HomeFragment.java">Example.java
         <span>
             <img style="vertical-align:middle;color:#0566D6;" src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open">
         </span>
