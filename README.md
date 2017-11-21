@@ -2,9 +2,9 @@
 
 ## Let's see it in action
 
-<img src="https://image.ibb.co/jzFpwR/Screenshot_20171026_120927.png" width="250"> | <img src="https://image.ibb.co/kQuhGR/Screenshot_20171026_120933.png" width="250"> | <img src="https://image.ibb.co/c47PVm/Screenshot_20171026_120940.png" width="250">
+<img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/screen1.png" width="250"> | <img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/screen2.png" width="250"> | <img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/screen3.png" width="250">
 
-<img src="https://image.ibb.co/e8M7i6/Screenshot_20171026_120951.png" width="250"> | <img src="https://image.ibb.co/cUptO6/Screenshot_20171026_121106.png" width="250">
+<img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/screen4.png" width="250"> | <img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/screen5.png" width="250">
 
 
 ## Pre requisites
@@ -56,7 +56,9 @@ allprojects {
 
 <div style="text-align:right;">
     <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/build.gradle">build.gradle
-    <span><img style="vertical-align:middle;color:#0566D6;"src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
+        <span>
+            <img style="vertical-align:middle;color:#0566D6;" src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open">
+        </span>
     </a>
 </div>
 
@@ -72,7 +74,9 @@ project(':chat').projectDir = new File('<CHAT_LIBRARY_FOLDER_PATH>/chat21-androi
 
 <div style="text-align:right">
     <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/settings.gradle">settings.gradle
-    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
+        <span>
+            <img style="vertical-align:middle;color:#0566D6;" src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open">
+        </span>
     </a>
 </div>
 
@@ -149,7 +153,9 @@ android {
 ```
 <div style="text-align:right">
     <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/build.gradle">/app/build.gradle
-    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
+        <span>
+            <img style="vertical-align:middle;color:#0566D6;" src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open">
+        </span>
     </a>
 </div>
 
@@ -171,7 +177,9 @@ configurations.all {
 ```
 <div style="text-align:right">
     <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/build.gradle">/app/build.gradle
-    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
+        <span>
+            <img style="vertical-align:middle;color:#0566D6;" src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open">
+        </span>
     </a>
 </div>
 
@@ -210,7 +218,9 @@ The Chat21 SDK needs the following permissions:
     
 <div style="text-align:right">
     <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/AndroidManifest.xml">AndroidManifest.xml
-    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
+        <span>
+            <img style="vertical-align:middle;color:#0566D6;" src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open">
+        </span>
     </a>
 </div>
 
@@ -243,7 +253,9 @@ In your `<application></application>` :
     
    <div style="text-align:right">
        <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/AndroidManifest.xml">AndroidManifest.xml
-       <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
+           <span>
+               <img style="vertical-align:middle;color:#0566D6;" src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open">
+           </span>
        </a>
    </div>
     
@@ -278,8 +290,10 @@ Chat.initialize(chatConfiguration);
 
 <div style="text-align:right">
     <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/java/it/frontiere21/android/chat21/chat21demo/AppContext.java">AppContext.java
-    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
-    </a>
+       <span>
+           <img style="vertical-align:middle;color:#0566D6;" src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open">
+       </span>
+   </a>
 </div>
 
 Replace:
@@ -305,7 +319,9 @@ Chat.showConversationsListActivity();
 
 <div style="text-align:right">
     <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/java/it/frontiere21/android/chat21/chat21demo/HomeFragment.java">HomeFragment.java
-    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>       
+        <span>
+            <img style="vertical-align:middle;color:#0566D6;" src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open">
+        </span>
     </a>
 </div>
 
@@ -338,7 +354,9 @@ Now you can show your chat with the following method:
 
 <div style="text-align:right">
     <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/java/it/frontiere21/android/chat21/chat21demo/ChatFragment.java">ChatFragment.java
-    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>        
+        <span>
+            <img style="vertical-align:middle;color:#0566D6;" src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open">
+        </span>
     </a>
 </div>
 
