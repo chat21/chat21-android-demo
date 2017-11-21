@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.2"
 
     defaultConfig {
-        applicationId "it.frontiere21.android.chat21.chat21demo"
+        applicationId "it.chat21.android.demo"
         minSdkVersion 19
         targetSdkVersion 22
         versionCode 3

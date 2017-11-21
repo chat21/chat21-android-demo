@@ -1,4 +1,4 @@
-package it.frontiere21.android.chat21.chat21demo;
+package it.chat21.android.demo;
 
 import java.util.ArrayList;
 import java.util.List;

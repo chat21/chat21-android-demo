@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="it.frontiere21.android.chat21.chat21demo.TabActivity">
+    tools:context="it.frontiere21.android.chat21.chat21demo.it.chat21.android.demo.TabActivity">
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

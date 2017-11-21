@@ -1,4 +1,4 @@
-package it.frontiere21.android.chat21.chat21demo;
+package it.chat21.android.demo;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import chat21.android.Chat;
+import it.frontiere21.android.chat21.chat21demo.R;
 
 /**
  * A fragment containing the chat.
