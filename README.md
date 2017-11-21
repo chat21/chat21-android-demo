@@ -22,7 +22,6 @@ Download [chat21 sdk](https://bitbucket.org/frontiere21/chat21-android-sdk) in y
 
 add Google Play Service classpath and Google dependencies and sync.
 
-<div style="background:#F7F7F7;">
 
 ```
 buildscript {
@@ -57,9 +56,8 @@ allprojects {
 
 <div style="text-align:right;">
     <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/build.gradle">build.gradle
-    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
+    <span><img style="color:#0566D6;"src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
     </a>
-</div>
 </div>
 
 
