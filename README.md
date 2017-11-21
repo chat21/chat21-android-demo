@@ -56,7 +56,7 @@ allprojects {
 
 <div style="text-align:right;">
     <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/build.gradle">build.gradle
-    <span style="vertical-align:middle;"><img style="color:#0566D6;"src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
+    <span><img style="vertical-align:middle;color:#0566D6;"src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
     </a>
 </div>
 
