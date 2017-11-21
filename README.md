@@ -2,9 +2,9 @@
 
 ## Let's see it in action
 
-<img src="http://preview.ibb.co/dCHoCb/Screenshot_20171031_131943.png" width="250"> | <img src="https://image.ibb.co/jzFpwR/Screenshot_20171026_120927.png" width="250"> | <img src="https://image.ibb.co/kQuhGR/Screenshot_20171026_120933.png" width="250">
+<img src="https://image.ibb.co/jzFpwR/Screenshot_20171026_120927.png" width="250"> | <img src="https://image.ibb.co/kQuhGR/Screenshot_20171026_120933.png" width="250"> | <img src="https://image.ibb.co/c47PVm/Screenshot_20171026_120940.png" width="250">
 
-<img src="https://image.ibb.co/c47PVm/Screenshot_20171026_120940.png" width="250"> | <img src="https://image.ibb.co/e8M7i6/Screenshot_20171026_120951.png" width="250"> | <img src="https://image.ibb.co/cUptO6/Screenshot_20171026_121106.png" width="250">
+<img src="https://image.ibb.co/e8M7i6/Screenshot_20171026_120951.png" width="250"> | <img src="https://image.ibb.co/cUptO6/Screenshot_20171026_121106.png" width="250">
 
 
 ## Pre requisites
@@ -21,6 +21,8 @@ Download [chat21 sdk](https://bitbucket.org/frontiere21/chat21-android-sdk) in y
 #### /project/build.gradle
 
 add Google Play Service classpath and Google dependencies and sync.
+
+<div style="background:#F7F7F7;">
 
 ```
 buildscript {
@@ -53,6 +55,14 @@ allprojects {
 
 ```
 
+<div style="text-align:right;">
+    <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/build.gradle">build.gradle
+    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
+    </a>
+</div>
+</div>
+
+
 #### /project/settings.gradle
 
 Open your settings.gradle, paste these two lines and sync
@@ -62,28 +72,27 @@ include ':chat'
 project(':chat').projectDir = new File('<CHAT_LIBRARY_FOLDER_PATH>/chat21-android-sdk/chat/')
 ```
 
+<div style="text-align:right">
+    <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/settings.gradle">settings.gradle
+    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
+    </a>
+</div>
+
+
 replace `<CHAT_LIBRARY_FOLDER_PATH>` with your Chat21 SDK folder path.
 
 #### /project/app/build.gradle
 
 ##### Android
-- Set yout minimun SDK at least at ***API 19*** 
-- enable support for vector drawables
-- enable multidex support
-- exclude from ***packagingOptions***:
-  - 'META-INF/LICENSE'
-  - 'META-INF/NOTICE'
-  - 'META-INF/license.txt'
-  - 'META-INF/notice.txt'
-  - 'META-INF/DEPENDENCIES'
-  
-your android should be like this: 
+Set yout minimun SDK at least at ***API 19*** 
+
+Your android should be like this: 
 
 ```
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
-
+    
     defaultConfig {
         applicationId "it.frontiere21.android.chat21.chat21demo"
         minSdkVersion 19
@@ -98,14 +107,14 @@ android {
         // multidex support
         multiDexEnabled true
     }
-
+    
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    
     packagingOptions {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/NOTICE'
@@ -114,40 +123,37 @@ android {
         exclude 'META-INF/DEPENDENCIES'
     }
     
-    . . . 
-}
-````
-
-##### Dependencies 
-
-```
-add the following dependencies:
-
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-
-    // multidex
-    compile 'com.android.support:multidex:1.0.1' 
+    dependencies {
+        compile fileTree(dir: 'libs', include: ['*.jar'])
     
-    // android
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support:design:26.+'
-    compile 'com.android.support:cardview-v7:26.+'
-    compile 'com.android.support:support-vector-drawable:26.+'
-
-    // google play service
-    compile 'com.google.android.gms:play-services:11.4.0'
-
-    // user dependencies
-    compile 'com.github.bumptech.glide:glide:3.8.0' // image loading
-    // Required only if Facebook login support is required
-    compile('com.facebook.android:facebook-android-sdk:4.22.1')
-    // chat
-    compile project(':chat')
+        // multidex
+        compile 'com.android.support:multidex:1.0.1' 
+        
+        // android
+        compile 'com.android.support:appcompat-v7:26.+'
+        compile 'com.android.support:design:26.+'
+        compile 'com.android.support:cardview-v7:26.+'
+        compile 'com.android.support:support-vector-drawable:26.+'
     
-    . . . 
+        // google play service
+        compile 'com.google.android.gms:play-services:11.4.0'
+    
+        // user dependencies
+        compile 'com.github.bumptech.glide:glide:3.8.0' // image loading
+        // Required only if Facebook login support is required
+        compile('com.facebook.android:facebook-android-sdk:4.22.1')
+        // chat
+        compile project(':chat')
+        
+        . . . 
+    }
 }
 ```
+<div style="text-align:right">
+    <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/build.gradle">/app/build.gradle
+    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
+    </a>
+</div>
 
 ##### Other configurations
 
@@ -165,6 +171,11 @@ configurations.all {
     }
 }
 ```
+<div style="text-align:right">
+    <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/build.gradle">/app/build.gradle
+    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
+    </a>
+</div>
 
 ##### Google Play Services plugin
 
@@ -188,21 +199,22 @@ Then you must declare the permissions in the manifest and set the targetSdkVersi
 
 The Chat21 SDK needs the following permissions: 
 
-- Required to perform messaging:
 
     ```
     <uses-permission android:name="android.permission.INTERNET" />
     
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    ```
 
-- Required to cache internal data and allow images and documents to be sent:
-
-    ```
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     ```
+    
+<div style="text-align:right">
+    <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/AndroidManifest.xml">AndroidManifest.xml
+    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
+    </a>
+</div>
 
 #### Application
 
@@ -214,33 +226,37 @@ In your `<application></application>` :
      initialize and add extra customization for the Chat21 SDK
 
 - add the `tools:replace="android:label"` to override the Chat21 SDK app name:
-
-    ***this is a mandatory step***. It prevents the error: 
+  
+    ```
+    <application
+        android:name=".AppContext"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label"> <!-- add this -->
+        
+        . . . 
+                
+    </application>
+    ```
+    
+   <div style="text-align:right">
+       <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/AndroidManifest.xml">AndroidManifest.xml
+       <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
+       </a>
+   </div>
+    
+   It prevents the error: 
     
     ```
     /android/MyApp/app/src/main/AndroidManifest.xml:30:9 Error:
     Attribute application@label value=(@string/application_name) from AndroidManifest.xml:30:9
     is also present at {Library Name} value=(@string/app_name)
     Suggestion: add 'tools:replace="android:label"' to <application> element at AndroidManifest.xml:26:5 to override
-    ```
-
-Your `<application></application>` should be something like this:
-
-```
-<application
-            android:name=".AppContext"
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme"
-            tools:replace="android:label">
-            
-            . . . 
-            
-</application>
-```
+   ```
 
 ### Chat21 SDK initialization
 
@@ -253,7 +269,8 @@ Chat21 SDK Chat.Configuration.Builder) and use it as paramater for the method `C
 ```
 // create a chat configurations object
 Chat.Configuration chatConfiguration = new Chat.Configuration
-        .Builder(context, APP_ID, <LOGGED_USER_ID>, <LOGGED_USER_EMAIL>, <LOGGED_USER_FULLNAME>
+        .Builder(context, <LOGGED_USER_ID>, <LOGGED_USER_EMAIL>, <LOGGED_USER_FULLNAME>
+        .contatcs(<CONTACT_LIST>)
         .build();
         
 
@@ -261,41 +278,45 @@ Chat.Configuration chatConfiguration = new Chat.Configuration
 Chat.initialize(chatConfiguration);
 ```
 
+<div style="text-align:right">
+    <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/java/it/frontiere21/android/chat21/chat21demo/AppContext.java">AppContext.java
+    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>
+    </a>
+</div>
+
 Replace:
 
 - `<LOGGED_USER_ID>` with your logged user id;
 - `<LOGGED_USER_EMAIL>` with your logged user email;
 - `<LOGGED_USER_FULLNAME>` with your logged user display name;
+- `<CONTACT_LIST>` is the list of users to chat with;
 
-You can set your own contact list directly with the Chat.Configuration.Builder
 
-```
-Chat.Configuration chatConfiguration = new Chat.Configuration
-        .Builder(context, APP_ID, <LOGGED_USER_ID>, <LOGGED_USER_EMAIL>, <LOGGED_USER_FULLNAME>
-        .contatcs(<CONTACT_LIST>)
-        .build();
-```
+### Launch your chat
 
-or with the optional configuration
-
-```
- chatConfiguration.setContacts(<CONTACT_LIST>);
-```
-
-replace:
-- `<CONTACT_LIST>` with a list of IChatUser
+The Chat21 SDK lets you start your chat with both an activity and a inside a fragment.
 
 #### Launch with an activity
+
+It starts a new activity that contains the list of conversations.
 
 ```
 Chat.showConversationsListActivity();
 
 ```
 
+<div style="text-align:right">
+    <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/java/it/frontiere21/android/chat21/chat21demo/HomeFragment.java">HomeFragment.java
+    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>       
+    </a>
+</div>
 
 #### Launch with a fragment
 
-You have to create a fragment with a container inside
+You have to create a fragment with a container inside.
+
+The chat will start inside this container where the list of conversations is shown.
+
 
 ```
 <android.support.design.widget.CoordinatorLayout 
@@ -316,6 +337,12 @@ Now you can show your chat with the following method:
  Chat.showConversationsListFragment(getChildFragmentManager(), R.id.container);
 
 ```
+
+<div style="text-align:right">
+    <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/java/it/frontiere21/android/chat21/chat21demo/ChatFragment.java">ChatFragment.java
+    <span><img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open"></span>        
+    </a>
+</div>
 
 ## Limitations
 
