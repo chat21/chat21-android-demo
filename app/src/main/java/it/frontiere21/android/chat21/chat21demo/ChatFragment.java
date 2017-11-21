@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import it.smart21.android.chat.Chat;
+import chat21.android.Chat;
 
 /**
  * A fragment containing the chat.

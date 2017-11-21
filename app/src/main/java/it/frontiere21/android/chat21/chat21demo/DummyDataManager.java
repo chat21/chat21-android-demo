@@ -3,8 +3,8 @@ package it.frontiere21.android.chat21.chat21demo;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.smart21.android.chat.user.models.ChatUser;
-import it.smart21.android.chat.user.models.IChatUser;
+import chat21.android.user.models.ChatUser;
+import chat21.android.user.models.IChatUser;
 
 /**
  * Created by stefanodp91 on 25/10/17.

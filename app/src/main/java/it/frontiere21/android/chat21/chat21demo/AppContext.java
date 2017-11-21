@@ -2,7 +2,7 @@ package it.frontiere21.android.chat21.chat21demo;
 
 import android.app.Application;
 
-import it.smart21.android.chat.Chat;
+import chat21.android.Chat;
 
 /**
  * Created by stefanodp91 on 25/09/17.

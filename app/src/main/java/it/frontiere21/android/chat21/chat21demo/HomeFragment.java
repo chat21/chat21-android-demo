@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import it.smart21.android.chat.Chat;
+import chat21.android.Chat;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 

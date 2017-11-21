@@ -1,4 +1,4 @@
 include ':app'
 
 include ':chat'
-project(':chat').projectDir = new File('../chat21-android-sdk/chat/')
+project(':chat').projectDir = new File('../chat21-android-sdk-v3/chat/')

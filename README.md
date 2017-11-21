@@ -128,7 +128,7 @@ android {
         compile 'com.android.support:support-vector-drawable:26.+'
     
         // google play service
-        compile 'com.google.android.gms:play-services:11.4.0'
+        compile 'com.google.android.gms:play-services:11.6.0'
    
         // chat
         compile project(':chat')
@@ -192,11 +192,8 @@ The Chat21 SDK needs the following permissions:
 
     ```
     <uses-permission android:name="android.permission.INTERNET" />
-    
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     ```
     
@@ -217,7 +214,7 @@ In your `<application></application>` :
     ***this is a mandatory step***. You have to create your own application class in which we'll 
      initialize and add extra customization for the Chat21 SDK
 
-- add the `tools:replace="android:label"` to override the Chat21 SDK app name:
+- add the ` tools:replace="android:label, android:icon"` to override the Chat21 SDK app name and default icon:
   
     ```
     <application
@@ -228,7 +225,7 @@ In your `<application></application>` :
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:label"> <!-- add this -->
+        tools:replace="android:label, android:icon"> <!-- add this -->
         
         . . . 
                 
@@ -338,6 +335,38 @@ Now you can show your chat with the following method:
 
 <div style="text-align:right">
     <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/java/it/frontiere21/android/chat21/chat21demo/ChatFragment.java">ChatFragment.java
+        <span>
+            <img style="vertical-align:middle;color:#0566D6;" src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open">
+        </span>
+    </a>
+</div>
+
+### Style.xml
+
+The Chat21 SDk supports most customizable android [Toolbar](https://developer.android.com/training/appbar/setting-up.html) instead of old ActionBar.
+
+In your style.xml change your parent theme from 
+
+```
+<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+``` 
+
+to 
+```
+ <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+ ```
+ 
+ to prevent the exception:
+
+
+```
+java.lang.RuntimeException: Unable to start activity ComponentInfo{android.chat21.customeroverview/chat21.android.conversations.activities.ConversationListActivity}: java.lang.IllegalStateException: This Activity already has an action bar supplied by the window decor. Do not request Window.FEATURE_SUPPORT_ACTION_BAR and set windowActionBar to false in your theme to use a Toolbar instead.
+Caused by: java.lang.IllegalStateException: This Activity already has an action bar supplied by the window decor. Do not request Window.FEATURE_SUPPORT_ACTION_BAR and set windowActionBar to false in your theme to use a Toolbar instead.
+ ```
+
+<div style="text-align:right">
+    <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/res/values/styles.xml">styles.xml
         <span>
             <img style="vertical-align:middle;color:#0566D6;" src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open">
         </span>
