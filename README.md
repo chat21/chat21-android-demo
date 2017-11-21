@@ -71,6 +71,7 @@ Open your settings.gradle, paste these two lines and sync
 include ':chat'
 project(':chat').projectDir = new File('<CHAT_LIBRARY_FOLDER_PATH>/chat21-android-sdk/chat/')
 ```
+replace `<CHAT_LIBRARY_FOLDER_PATH>` with your Chat21 SDK folder path.
 
 <div style="text-align:right">
     <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/settings.gradle">settings.gradle
@@ -80,8 +81,6 @@ project(':chat').projectDir = new File('<CHAT_LIBRARY_FOLDER_PATH>/chat21-androi
     </a>
 </div>
 
-
-replace `<CHAT_LIBRARY_FOLDER_PATH>` with your Chat21 SDK folder path.
 
 #### /project/app/build.gradle
 
@@ -251,14 +250,6 @@ In your `<application></application>` :
     </application>
     ```
     
-   <div style="text-align:right">
-       <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/AndroidManifest.xml">AndroidManifest.xml
-           <span>
-               <img style="vertical-align:middle;color:#0566D6;" src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open">
-           </span>
-       </a>
-   </div>
-    
    It prevents the error: 
     
     ```
@@ -267,6 +258,14 @@ In your `<application></application>` :
     is also present at {Library Name} value=(@string/app_name)
     Suggestion: add 'tools:replace="android:label"' to <application> element at AndroidManifest.xml:26:5 to override
    ```
+   
+    <div style="text-align:right">
+          <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/AndroidManifest.xml">AndroidManifest.xml
+              <span>
+                  <img style="vertical-align:middle;color:#0566D6;" src="https://github.com/chat21/chat21-android-demo/blob/master/resources/ic_open_in_new_white_24px.svg" alt="open">
+              </span>
+          </a>
+      </div>
 
 ### Chat21 SDK initialization
 
@@ -288,6 +287,13 @@ Chat.Configuration chatConfiguration = new Chat.Configuration
 Chat.initialize(chatConfiguration);
 ```
 
+Replace:
+
+- `<LOGGED_USER_ID>` with your logged user id;
+- `<LOGGED_USER_EMAIL>` with your logged user email;
+- `<LOGGED_USER_FULLNAME>` with your logged user display name;
+- `<CONTACT_LIST>` is the list of users to chat with;
+
 <div style="text-align:right">
     <a target="_top" href="https://github.com/chat21/chat21-android-demo/blob/master/app/src/main/java/it/frontiere21/android/chat21/chat21demo/AppContext.java">AppContext.java
        <span>
@@ -295,13 +301,6 @@ Chat.initialize(chatConfiguration);
        </span>
    </a>
 </div>
-
-Replace:
-
-- `<LOGGED_USER_ID>` with your logged user id;
-- `<LOGGED_USER_EMAIL>` with your logged user email;
-- `<LOGGED_USER_FULLNAME>` with your logged user display name;
-- `<CONTACT_LIST>` is the list of users to chat with;
 
 
 ### Launch your chat
