@@ -1,6 +1,6 @@
 # Chat21 SDK Demo 
 
-## add Chat21 SDK to project
+## Add Chat21 SDK to your project
 
 Follow the [readme](https://github.com/chat21/android-sdk/blob/0.10.x/README.md) to add the Chat21 SDK to your project 
 
