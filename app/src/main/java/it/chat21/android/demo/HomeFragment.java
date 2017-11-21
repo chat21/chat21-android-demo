@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import chat21.android.Chat;
-import it.frontiere21.android.chat21.chat21demo.R;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 

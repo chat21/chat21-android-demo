@@ -11,8 +11,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import it.frontiere21.android.chat21.chat21demo.R;
-
 public class TabActivity extends AppCompatActivity {
 
     /**

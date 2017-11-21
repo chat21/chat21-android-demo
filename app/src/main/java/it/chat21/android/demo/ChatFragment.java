@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import chat21.android.Chat;
-import it.frontiere21.android.chat21.chat21demo.R;
 
 /**
  * A fragment containing the chat.
