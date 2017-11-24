@@ -1,4 +1,4 @@
-package it.chat21.android.demo;
+package chat21.android.demo;
 
 import java.util.ArrayList;
 import java.util.List;

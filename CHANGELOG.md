@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3
+- updated demo package
+- fixed conversWith issue
+- fixed sender layout timestamp
+
 ## 1.2
 - changed chat package
 
