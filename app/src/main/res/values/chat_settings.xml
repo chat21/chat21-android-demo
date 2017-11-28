@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--root of firebase database-->
+    <string name="root" translatable="false">https://chat21-sdk-demo.firebaseio.com</string>
+
+    <!--appID in which it is messaging-->
+    <string name="tenant" translatable="false">chat21_demo</string>
+</resources>

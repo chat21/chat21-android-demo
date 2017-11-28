@@ -4,6 +4,8 @@
 - updated demo package
 - fixed conversWith issue
 - fixed sender layout timestamp
+- updated chat sdk
+- added chat settings
 
 ## 1.2
 - changed chat package

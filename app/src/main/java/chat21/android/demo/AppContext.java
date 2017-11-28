@@ -1,15 +1,16 @@
 package chat21.android.demo;
 
 import android.app.Application;
+import android.util.Log;
 
-import chat21.android.Chat;
+import chat21.android.core.ChatManager;
 
 /**
  * Created by stefanodp91 on 25/09/17.
  */
 
 public class AppContext extends Application {
-    private static final String APP_ID = "chat21_demo";
+    private static final String TAG = AppContext.class.getName();
 
     private static AppContext instance;
 
@@ -18,23 +19,21 @@ public class AppContext extends Application {
         super.onCreate();
         instance = this;
 
-        initChatSDK(instance);
+        initChatSDK();
     }
 
-    private void initChatSDK(Application context) {
+    private void initChatSDK() {
 
-        // create a chat configurations object
-        Chat.Configuration chatConfiguration = new Chat.Configuration
-                .Builder(context, APP_ID,
-                DummyDataManager.getLoggedUser().getId(),
-                DummyDataManager.getLoggedUser().getEmail(),
-                DummyDataManager.getLoggedUser().getFullName())
-//                .contacts(DummyDataManager.getContacts())
-                .build();
+        // it creates the chat configurations
+        ChatManager.Configuration mChatConfiguration =
+                new ChatManager.Configuration.Builder(getString(R.string.tenant)).build();
 
-        chatConfiguration.setContacts(DummyDataManager.getContacts());
-
-        // init and start the chat
-        Chat.initialize(chatConfiguration);
+        // assuming you have a login, check if the logged user (converted to IChatUser) is valid
+        if (DummyDataManager.getLoggedUser() != null) {
+            ChatManager.start(instance, mChatConfiguration, DummyDataManager.getLoggedUser());
+            Log.i(TAG, "chat has been initialized with success");
+        } else {
+            Log.w(TAG, "chat can't be initialized because chatUser is null");
+        }
     }
 }

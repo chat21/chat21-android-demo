@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import chat21.android.Chat;
+import chat21.android.core.ChatManager;
 
 /**
  * A fragment containing the chat.
@@ -37,7 +37,7 @@ public class ChatFragment extends Fragment {
         setHasOptionsMenu(false); // disable fragment option menu
 
         // starts the chat inside a container
-        Chat.showConversationsListFragment(getChildFragmentManager(), R.id.container);
+        ChatManager.getInstance().showConversationsListFragment(getChildFragmentManager(), R.id.container);
 
         return rootView;
     }
