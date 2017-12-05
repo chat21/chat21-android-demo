@@ -1,6 +1,8 @@
 package chat21.android.demo;
 
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import chat21.android.core.ChatManager;
@@ -13,6 +15,12 @@ public class AppContext extends Application {
     private static final String TAG = AppContext.class.getName();
 
     private static AppContext instance;
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 
     @Override
     public void onCreate() {
