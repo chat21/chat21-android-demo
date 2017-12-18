@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "77360455507",
+    "firebase_url": "https://chat-v2-dev.firebaseio.com",
+    "project_id": "chat-v2-dev",
+    "storage_bucket": "chat-v2-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77360455507:android:363c6b98cc530d4d",
+        "android_client_info": {
+          "package_name": "chat21.android.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77360455507-k3n9ocsq3pdek7hgbrriop20oif3nbqo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiOUqTXdEx9k0AcQNO93eOW5QZ_BFqeMs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
