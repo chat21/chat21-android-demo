@@ -3,8 +3,9 @@ package chat21.android.demo;
 import java.util.ArrayList;
 import java.util.List;
 
-import chat21.android.user.models.ChatUser;
-import chat21.android.user.models.IChatUser;
+import chat21.android.core.users.models.ChatUser;
+import chat21.android.core.users.models.IChatUser;
+
 
 /**
  * Created by stefanodp91 on 25/10/17.

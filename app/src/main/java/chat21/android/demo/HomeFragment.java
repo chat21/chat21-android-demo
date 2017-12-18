@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import chat21.android.core.ChatManager;
+import chat21.android.ui.ChatUI;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
@@ -53,12 +54,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         String contactId = DummyDataManager.getContacts().get(3).getId();
 
-        ChatManager.getInstance().showDirectConversationActivity(contactId);
+        ChatUI.getInstance().showDirectConversationActivity(contactId);
     }
 
     private void onStartChatActivityAction() {
 
         // stats the chat
-        ChatManager.getInstance().showConversationsListActivity();
+        ChatUI.getInstance().showConversationsListActivity();
     }
 }
