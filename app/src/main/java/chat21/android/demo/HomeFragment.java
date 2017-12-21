@@ -59,6 +59,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private void onStartChatActivityAction() {
 
+        ChatManager.getInstance().setContacts(DummyDataManager.getContacts()); // TODO: 19/12/17 remove this line
+
         // stats the chat
         ChatUI.getInstance().showConversationsListActivity();
     }
