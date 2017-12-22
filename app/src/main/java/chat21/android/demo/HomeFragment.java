@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import chat21.android.core.ChatManager;
+import chat21.android.core.users.models.ChatUser;
+import chat21.android.core.users.models.IChatUser;
 import chat21.android.ui.ChatUI;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
@@ -52,6 +54,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private void onDirectMessageAction() {
 
+        //laurice_hoadley
         String contactId = DummyDataManager.getContacts().get(3).getId();
 
         ChatUI.getInstance().showDirectConversationActivity(contactId);
@@ -60,6 +63,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private void onStartChatActivityAction() {
 
         ChatManager.getInstance().setContacts(DummyDataManager.getContacts()); // TODO: 19/12/17 remove this line
+
+        //andrea.leo
+        IChatUser andrealeo = new ChatUser("U4HL3GWjBsd8zLX4Vva0s7W2FN92", "Andrea Leo");
+
+        ChatManager.getInstance().addContact(andrealeo);
 
         // stats the chat
         ChatUI.getInstance().showConversationsListActivity();
