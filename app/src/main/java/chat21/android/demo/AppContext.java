@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.util.Log;
+import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -12,7 +13,10 @@ import chat21.android.core.ChatManager;
 import chat21.android.core.users.models.ChatUser;
 import chat21.android.core.users.models.IChatUser;
 import chat21.android.ui.ChatUI;
-import chat21.android.ui.login.ChatLoginActivity;
+import chat21.android.ui.contacts.activites.ContactListActivity;
+import chat21.android.ui.conversations.listeners.OnContactListClickListener;
+import chat21.android.ui.conversations.listeners.OnNewConversationClickListener;
+import chat21.android.ui.conversations.listeners.OnSupportContactListClickListener;
 
 /**
  * Created by stefanodp91 on 25/09/17.
@@ -56,6 +60,24 @@ public class AppContext extends Application {
             Log.i(TAG, "chat has been initialized with success");
 
             ChatUI.getInstance().setContext(instance);
+            // set on new conversation click listener
+            final IChatUser support = new ChatUser("support", "Chat21 Support");
+//            final IChatUser support = null;
+            ChatUI.getInstance().setOnNewConversationClickListener(new OnNewConversationClickListener() {
+                @Override
+                public void onNewConversationClicked(View view) {
+                    if (support != null) {
+                        // enable support account button action
+                        OnSupportContactListClickListener onSupportContactListClickListener =
+                                new OnSupportContactListClickListener(instance, support);
+                        onSupportContactListClickListener.setContactListActivityClass(ContactListActivity.class);
+                        view.setOnClickListener(onSupportContactListClickListener);
+                    } else {
+                        // enable contact list button action
+                        view.setOnClickListener(new OnContactListClickListener(instance));
+                    }
+                }
+            });
             Log.i(TAG, "ChatUI has been initialized with success");
 
         } else {
