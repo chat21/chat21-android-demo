@@ -2,6 +2,7 @@ package chat21.android.demo;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.support.multidex.MultiDex;
 import android.util.Log;
 import android.view.View;
@@ -14,9 +15,7 @@ import chat21.android.core.users.models.ChatUser;
 import chat21.android.core.users.models.IChatUser;
 import chat21.android.ui.ChatUI;
 import chat21.android.ui.contacts.activites.ContactListActivity;
-import chat21.android.ui.conversations.listeners.OnContactListClickListener;
 import chat21.android.ui.conversations.listeners.OnNewConversationClickListener;
-import chat21.android.ui.conversations.listeners.OnSupportContactListClickListener;
 
 /**
  * Created by stefanodp91 on 25/09/17.
@@ -61,21 +60,18 @@ public class AppContext extends Application {
 
             ChatUI.getInstance().setContext(instance);
             // set on new conversation click listener
-            final IChatUser support = new ChatUser("support", "Chat21 Support");
-//            final IChatUser support = null;
+//            final IChatUser support = new ChatUser("support", "Chat21 Support");
+            final IChatUser support = null;
             ChatUI.getInstance().setOnNewConversationClickListener(new OnNewConversationClickListener() {
                 @Override
-                public void onNewConversationClicked(View view) {
+                public void onNewConversationClicked() {
                     if (support != null) {
-                        // enable support account button action
-                        OnSupportContactListClickListener onSupportContactListClickListener =
-                                new OnSupportContactListClickListener(instance, support);
-                        onSupportContactListClickListener.setContactListActivityClass(ContactListActivity.class);
-                        view.setOnClickListener(onSupportContactListClickListener);
+                        ChatUI.getInstance().showDirectConversationActivity(support);
                     } else {
-                        // enable contact list button action
-                        view.setOnClickListener(new OnContactListClickListener(instance));
-                    }
+                        Intent intent = new Intent(instance, ContactListActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // start activity from context
+
+                        startActivity(intent);                    }
                 }
             });
             Log.i(TAG, "ChatUI has been initialized with success");

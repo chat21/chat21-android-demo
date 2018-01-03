@@ -55,9 +55,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private void onDirectMessageAction() {
 
         //laurice_hoadley
-        String contactId = DummyDataManager.getContacts().get(3).getId();
+        IChatUser contact = DummyDataManager.getContacts().get(3);
 
-        ChatUI.getInstance().showDirectConversationActivity(contactId);
+        ChatUI.getInstance().showDirectConversationActivity(contact);
     }
 
     private void onStartChatActivityAction() {
