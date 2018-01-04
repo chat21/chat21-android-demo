@@ -48,7 +48,7 @@ dependencies {
     compile 'com.android.support:support-vector-drawable:26.1.0'
 
     // google play service
-    compile "com.google.android.gms:play-services:11.6.0"
+    compile "com.google.android.gms:play-services:11.8.0"
 
     // user dependencies
     compile 'com.github.bumptech.glide:glide:3.8.0' // image loading
