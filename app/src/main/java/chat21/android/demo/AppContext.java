@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.multidex.MultiDex;
 import android.util.Log;
-import android.view.View;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -15,7 +15,9 @@ import chat21.android.core.users.models.ChatUser;
 import chat21.android.core.users.models.IChatUser;
 import chat21.android.ui.ChatUI;
 import chat21.android.ui.contacts.activites.ContactListActivity;
+import chat21.android.ui.contacts.listeners.OnCreateGroupClickListener;
 import chat21.android.ui.conversations.listeners.OnNewConversationClickListener;
+import chat21.android.ui.messages.listeners.OnAttachClickListener;
 
 /**
  * Created by stefanodp91 on 25/09/17.
@@ -44,7 +46,9 @@ public class AppContext extends Application {
 
         // it creates the chat configurations
         ChatManager.Configuration mChatConfiguration =
-                new ChatManager.Configuration.Builder(getString(R.string.tenant)).firebaseUrl("https://chat-v2-dev.firebaseio.com/").build();
+                new ChatManager.Configuration.Builder(getString(R.string.tenant))
+                        .firebaseUrl("https://chat-v2-dev.firebaseio.com/")
+                        .build();
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -59,6 +63,8 @@ public class AppContext extends Application {
             Log.i(TAG, "chat has been initialized with success");
 
             ChatUI.getInstance().setContext(instance);
+            ChatUI.getInstance().enableGroups(true);
+
             // set on new conversation click listener
 //            final IChatUser support = new ChatUser("support", "Chat21 Support");
             final IChatUser support = null;
@@ -71,7 +77,24 @@ public class AppContext extends Application {
                         Intent intent = new Intent(instance, ContactListActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // start activity from context
 
-                        startActivity(intent);                    }
+                        startActivity(intent);
+                    }
+                }
+            });
+
+            // on attach button click listener
+            ChatUI.getInstance().setOnAttachClickListener(new OnAttachClickListener() {
+                @Override
+                public void onAttachClicked(Object object) {
+                    Toast.makeText(instance, "onAttachClickListener", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            // on create group button click listener
+            ChatUI.getInstance().setOnCreateGroupClickListener(new OnCreateGroupClickListener() {
+                @Override
+                public void onCreateGroupClicked() {
+                    Toast.makeText(instance, "setOnCreateGroupClickListener", Toast.LENGTH_SHORT).show();
                 }
             });
             Log.i(TAG, "ChatUI has been initialized with success");
