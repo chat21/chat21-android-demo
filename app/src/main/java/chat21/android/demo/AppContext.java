@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 import chat21.android.core.ChatManager;
 import chat21.android.core.users.models.ChatUser;
@@ -43,6 +44,10 @@ public class AppContext extends Application {
     }
 
     private void initChatSDK() {
+
+        //enable persistence must be made before any other usage of FirebaseDatabase instance.
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+
 
         // it creates the chat configurations
         ChatManager.Configuration mChatConfiguration =
