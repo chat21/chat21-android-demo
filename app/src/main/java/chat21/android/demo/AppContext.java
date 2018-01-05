@@ -43,7 +43,7 @@ public class AppContext extends Application {
         initChatSDK();
     }
 
-    private void initChatSDK() {
+    public void initChatSDK() {
 
         //enable persistence must be made before any other usage of FirebaseDatabase instance.
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
@@ -51,7 +51,7 @@ public class AppContext extends Application {
 
         // it creates the chat configurations
         ChatManager.Configuration mChatConfiguration =
-                new ChatManager.Configuration.Builder(getString(R.string.tenant))
+                new ChatManager.Configuration.Builder("tilechat2")
                         .firebaseUrl("https://chat-v2-dev.firebaseio.com/")
                         .build();
 
