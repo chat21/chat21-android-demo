@@ -90,6 +90,8 @@ public class TabActivity extends AppCompatActivity {
                 return HomeFragment.newInstance();
             } else if (position == 1) {
                 return ChatFragment.newInstance();
+            } else if (position == 2) {
+                return UserProfileFragment.newInstance();
             } else {
                 // default load home
                 return HomeFragment.newInstance();
@@ -98,8 +100,7 @@ public class TabActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 2 total pages.
-            return 2;
+            return 3;
         }
 
         @Override
@@ -109,6 +110,8 @@ public class TabActivity extends AppCompatActivity {
                     return "HOME";
                 case 1:
                     return "CHAT";
+                case 2:
+                    return "PROFILE";
             }
             return null;
         }
