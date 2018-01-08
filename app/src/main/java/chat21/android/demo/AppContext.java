@@ -12,13 +12,15 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 import chat21.android.core.ChatManager;
-import chat21.android.core.users.models.ChatUser;
 import chat21.android.core.users.models.IChatUser;
 import chat21.android.ui.ChatUI;
 import chat21.android.ui.contacts.activites.ContactListActivity;
 import chat21.android.ui.contacts.listeners.OnCreateGroupClickListener;
 import chat21.android.ui.conversations.listeners.OnNewConversationClickListener;
 import chat21.android.ui.messages.listeners.OnAttachClickListener;
+import chat21.android.utils.IOUtils;
+
+import static chat21.android.core.ChatManager._SERIALIZED_CHAT_CONFIGURATION_LOGGED_USER;
 
 /**
  * Created by stefanodp91 on 25/09/17.
@@ -58,11 +60,13 @@ public class AppContext extends Application {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         // assuming you have a login, check if the logged user (converted to IChatUser) is valid
-        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+//        if (currentUser != null) {
+        if (currentUser != null) {
+            IChatUser iChatUser = (IChatUser) IOUtils.getObjectFromFile(instance, _SERIALIZED_CHAT_CONFIGURATION_LOGGED_USER);
 
-            IChatUser iChatUser = new ChatUser();
-            iChatUser.setId(currentUser.getUid());
-            iChatUser.setEmail(currentUser.getEmail());
+//            IChatUser iChatUser = new ChatUser();
+//            iChatUser.setId(currentUser.getUid());
+//            iChatUser.setEmail(currentUser.getEmail());
 
             ChatManager.start(this, mChatConfiguration, iChatUser);
             Log.i(TAG, "chat has been initialized with success");

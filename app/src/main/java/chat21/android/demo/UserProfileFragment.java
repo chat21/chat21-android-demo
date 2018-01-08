@@ -108,20 +108,6 @@ public class UserProfileFragment extends Fragment {
 
     private void performLogout() {
 
-//        // TODO: 08/01/18 uncomment
-//        // remove the instanceId for the logged user
-//        DatabaseReference firebaseUsersPath = FirebaseDatabase.getInstance().getReference()
-//                .child("apps/" + ChatManager.Configuration.appId + "/users/" + loggedUser.getId() + "/instanceId");
-//        firebaseUsersPath.removeValue();
-//
-//        try {
-//            FirebaseInstanceId.getInstance().deleteInstanceId();
-//        } catch (IOException e) {
-//            Log.e(DEBUG_LOGIN, "cannot delete instanceId. " + e.getMessage());
-//            Toast.makeText(getActivity().getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-//            return;
-//        }
-
         // sign out from firebase
         FirebaseAuth.getInstance().signOut();
 
@@ -131,6 +117,8 @@ public class UserProfileFragment extends Fragment {
 //        } else {
 //            Log.d(TAG, "user signed out with success");
 //        }
+
+        ChatManager.getInstance().dispose();
 
         // get the main activity name from manifest
         String packageName = getActivity().getApplicationContext().getPackageName();
