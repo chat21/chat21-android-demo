@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import chat21.android.core.ChatManager;
 import chat21.android.core.users.models.IChatUser;
+import chat21.android.ui.login.listeners.OnLogoutClickListener;
 import chat21.android.utils.ChatUtils;
 import chat21.android.utils.image.CropCircleTransformation;
 
@@ -101,12 +101,31 @@ public class UserProfileFragment extends Fragment {
         mLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                performLogout();
+                // TODO: 09/01/18 logout must be embebbed inside chatUI
+                performLogout(new OnLogoutClickListener() {
+                    @Override
+                    public void onLogoutClicked() {
+                        // get the main activity name from manifest
+                        String packageName = getActivity().getApplicationContext().getPackageName();
+                        Intent launchIntent = getActivity().getApplicationContext().getPackageManager().getLaunchIntentForPackage(packageName);
+                        String className = launchIntent.getComponent().getClassName();
+                        try {
+                            Class<?> clazz = Class.forName(className);
+                            Intent intent = new Intent(getActivity().getApplicationContext(), clazz);
+                            // clear the activity stack
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent); // start the main activity
+                            getActivity().finish(); // finish this activity
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
             }
         });
     }
 
-    private void performLogout() {
+    private void performLogout(OnLogoutClickListener onLogoutClickListener) {
 
         // sign out from firebase
         FirebaseAuth.getInstance().signOut();
@@ -120,19 +139,6 @@ public class UserProfileFragment extends Fragment {
 
         ChatManager.getInstance().dispose();
 
-        // get the main activity name from manifest
-        String packageName = getActivity().getApplicationContext().getPackageName();
-        Intent launchIntent = getActivity().getApplicationContext().getPackageManager().getLaunchIntentForPackage(packageName);
-        String className = launchIntent.getComponent().getClassName();
-        try {
-            Class<?> clazz = Class.forName(className);
-            Intent intent = new Intent(getActivity().getApplicationContext(), clazz);
-            // clear the activity stack
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            getActivity().finish(); // finish this activity
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        onLogoutClickListener.onLogoutClicked();
     }
 }
