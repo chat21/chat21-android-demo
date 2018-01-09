@@ -91,21 +91,21 @@ public class AppContext extends Application {
                 }
             });
 
-            // on attach button click listener
-            ChatUI.getInstance().setOnAttachClickListener(new OnAttachClickListener() {
-                @Override
-                public void onAttachClicked(Object object) {
-                    Toast.makeText(instance, "onAttachClickListener", Toast.LENGTH_SHORT).show();
-                }
-            });
-
-            // on create group button click listener
-            ChatUI.getInstance().setOnCreateGroupClickListener(new OnCreateGroupClickListener() {
-                @Override
-                public void onCreateGroupClicked() {
-                    Toast.makeText(instance, "setOnCreateGroupClickListener", Toast.LENGTH_SHORT).show();
-                }
-            });
+//            // on attach button click listener
+//            ChatUI.getInstance().setOnAttachClickListener(new OnAttachClickListener() {
+//                @Override
+//                public void onAttachClicked(Object object) {
+//                    Toast.makeText(instance, "onAttachClickListener", Toast.LENGTH_SHORT).show();
+//                }
+//            });
+//
+//            // on create group button click listener
+//            ChatUI.getInstance().setOnCreateGroupClickListener(new OnCreateGroupClickListener() {
+//                @Override
+//                public void onCreateGroupClicked() {
+//                    Toast.makeText(instance, "setOnCreateGroupClickListener", Toast.LENGTH_SHORT).show();
+//                }
+//            });
             Log.i(TAG, "ChatUI has been initialized with success");
 
         } else {
