@@ -5,9 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.multidex.MultiDex;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
@@ -16,9 +14,7 @@ import chat21.android.core.ChatManager;
 import chat21.android.core.users.models.IChatUser;
 import chat21.android.ui.ChatUI;
 import chat21.android.ui.contacts.activites.ContactListActivity;
-import chat21.android.ui.contacts.listeners.OnCreateGroupClickListener;
 import chat21.android.ui.conversations.listeners.OnNewConversationClickListener;
-import chat21.android.ui.messages.listeners.OnAttachClickListener;
 import chat21.android.utils.IOUtils;
 
 import static chat21.android.core.ChatManager._SERIALIZED_CHAT_CONFIGURATION_LOGGED_USER;
@@ -50,7 +46,6 @@ public class AppContext extends Application {
 
         //enable persistence must be made before any other usage of FirebaseDatabase instance.
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-
 
         // it creates the chat configurations
         ChatManager.Configuration mChatConfiguration =
