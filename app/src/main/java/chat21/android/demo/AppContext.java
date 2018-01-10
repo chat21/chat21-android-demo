@@ -54,7 +54,7 @@ public class AppContext extends Application {
         // it creates the chat configurations
         ChatManager.Configuration mChatConfiguration =
                 new ChatManager.Configuration.Builder("tilechat")
-                        .firebaseUrl("https://chat-v2-dev.firebaseio.com/")
+//                        .firebaseUrl("https://chat-v2-dev.firebaseio.com/")
                         .build();
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
