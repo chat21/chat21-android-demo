@@ -7,6 +7,7 @@ import android.support.multidex.MultiDex;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
@@ -53,7 +54,7 @@ public class AppContext extends Application {
 
         // it creates the chat configurations
         ChatManager.Configuration mChatConfiguration =
-                new ChatManager.Configuration.Builder("tilechat")
+                new ChatManager.Configuration.Builder(getString(R.string.appId))
 //                        .firebaseUrl("https://chat-v2-dev.firebaseio.com/")
                         .build();
 
