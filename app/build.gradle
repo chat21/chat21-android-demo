@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "27.0.2"
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         applicationId "chat21.android.demo"
@@ -69,3 +69,5 @@ configurations.all {
         }
     }
 }
+
+apply plugin: 'com.google.gms.google-services'
