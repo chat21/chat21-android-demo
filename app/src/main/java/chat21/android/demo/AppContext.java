@@ -49,8 +49,9 @@ public class AppContext extends Application {
 
         // it creates the chat configurations
         ChatManager.Configuration mChatConfiguration =
-                new ChatManager.Configuration.Builder(getString(R.string.appId))
-//                        .firebaseUrl("https://chat-v2-dev.firebaseio.com/")
+                new ChatManager.Configuration.Builder(getString(R.string.chat_firebase_appId))
+                        .firebaseUrl(getString(R.string.chat_firebase_url))
+                        .storageBucket(getString(R.string.chat_firebase_storage_bucket))
                         .build();
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
