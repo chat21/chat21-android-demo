@@ -3,6 +3,7 @@ package chat21.android.demo;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.multidex.MultiDex;
 import android.util.Log;
 
@@ -67,6 +68,8 @@ public class AppContext extends Application {
 
             ChatManager.start(this, mChatConfiguration, iChatUser);
             Log.i(TAG, "chat has been initialized with success");
+
+            ChatManager.getInstance().initContactsSynchronizer();
 
             ChatUI.getInstance().setContext(instance);
             ChatUI.getInstance().enableGroups(true);
