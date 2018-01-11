@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import chat21.android.core.ChatManager;
 import chat21.android.core.contacts.synchronizer.ContactsFirestoreSynchronizer;
-import chat21.android.core.users.models.ChatUser;
 import chat21.android.core.users.models.IChatUser;
 import chat21.android.ui.ChatUI;
 
@@ -59,7 +57,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         ch.getAllContacts();
 
         //laurice_hoadley
-        IChatUser contact = DummyDataManager.getContacts().get(3);
+        IChatUser contact = DummyDataManager.getContact();
 
         ChatUI.getInstance().showDirectConversationActivity(contact);
     }
