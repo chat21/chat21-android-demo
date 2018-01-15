@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 import chat21.android.core.ChatManager;
+import chat21.android.core.authentication.task.RefreshFirebaseInstanceIdTask;
 import chat21.android.core.users.models.IChatUser;
 import chat21.android.ui.ChatUI;
 import chat21.android.ui.contacts.activites.ContactListActivity;
@@ -69,7 +70,10 @@ public class AppContext extends Application {
             ChatManager.start(this, mChatConfiguration, iChatUser);
             Log.i(TAG, "chat has been initialized with success");
 
-            ChatManager.getInstance().initContactsSynchronizer();
+            ChatManager.getInstance().initContactsSyncronizer();
+
+            // get device token
+            new RefreshFirebaseInstanceIdTask().execute();
 
             ChatUI.getInstance().setContext(instance);
             ChatUI.getInstance().enableGroups(true);
