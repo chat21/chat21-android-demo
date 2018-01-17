@@ -59,7 +59,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         //laurice_hoadley
         IChatUser contact = DummyDataManager.getContact();
 
-        ChatUI.getInstance().showDirectConversationActivity(contact);
+        ChatUI.getInstance().openConversationMessagesActivity(contact);
     }
 
     private void onStartChatActivityAction() {
@@ -72,6 +72,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //        ChatManager.getInstance().getContactsSynchronizer().addContact(andrealeo);
 //
         // stats the chat
-        ChatUI.getInstance().showConversationsListActivity();
+        ChatUI.getInstance().openConversationsListActivity();
     }
 }

@@ -55,7 +55,7 @@ public class ChatFragment extends Fragment /*implements MyPresenceListener */{
         setHasOptionsMenu(false); // disable fragment option menu
 
         // starts the chat inside a container
-        ChatUI.getInstance().showConversationsListFragment(getChildFragmentManager(), R.id.container);
+        ChatUI.getInstance().openConversationsListFragment(getChildFragmentManager(), R.id.container);
 
         return rootView;
     }

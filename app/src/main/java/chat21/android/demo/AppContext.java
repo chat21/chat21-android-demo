@@ -81,7 +81,7 @@ public class AppContext extends Application {
                 @Override
                 public void onNewConversationClicked() {
                     if (support != null) {
-                        ChatUI.getInstance().showDirectConversationActivity(support);
+                        ChatUI.getInstance().openConversationMessagesActivity(support);
                     } else {
                         Intent intent = new Intent(instance, ContactListActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // start activity from context
