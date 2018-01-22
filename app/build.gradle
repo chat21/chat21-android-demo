@@ -11,9 +11,9 @@ android {
         versionCode 6
         versionName "1.3.2"
 
-        // vectors drawable support
-        vectorDrawables.useSupportLibrary = true
-        resConfigs "auto"
+//        // vectors drawable support
+//        vectorDrawables.useSupportLibrary = true
+//        resConfigs "auto"
 
         // multidex support
         multiDexEnabled true
@@ -45,7 +45,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:27.0.2'
     compile 'com.android.support:design:27.0.2'
     compile 'com.android.support:cardview-v7:27.0.2'
-    compile 'com.android.support:support-vector-drawable:27.0.2'
+//    compile 'com.android.support:support-vector-drawable:27.0.2'
 
     // google play service
     compile "com.google.android.gms:play-services:11.8.0"
