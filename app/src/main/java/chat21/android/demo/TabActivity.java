@@ -8,8 +8,14 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import chat21.android.core.users.models.ChatUser;
+import chat21.android.core.users.models.IChatUser;
+import chat21.android.ui.ChatUI;
+import chat21.android.utils.StringUtils;
 
 public class TabActivity extends AppCompatActivity {
 
@@ -45,7 +51,10 @@ public class TabActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+        ChatUI.getInstance().processRemoteNotification(getIntent());
     }
+
 
 
     @Override
