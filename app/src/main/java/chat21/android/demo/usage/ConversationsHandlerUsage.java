@@ -42,9 +42,9 @@ public class ConversationsHandlerUsage {
         conversationsHandler.connect(conversationsListener);
 
 
-        // Remember to remove the listener
+        // Remember to remove the listener with
         conversationsHandler.removeConversationsListener(conversationsListener);
-        //or
+        //or with
         conversationsHandler.removeAllConversationsListeners();
 
 
