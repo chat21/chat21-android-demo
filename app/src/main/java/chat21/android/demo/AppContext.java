@@ -68,7 +68,7 @@ public class AppContext extends Application {
             ChatManager.start(this, mChatConfiguration, iChatUser);
             Log.i(TAG, "chat has been initialized with success");
 
-            ChatManager.getInstance().initContactsSyncronizer();
+//            ChatManager.getInstance().initContactsSyncronizer();
 
             ChatUI.getInstance().setContext(instance);
             ChatUI.getInstance().enableGroups(true);
