@@ -34,7 +34,7 @@
             android:theme="@style/AppTheme.NoActionBar">
 
             <intent-filter>
-                <action android:name="OPEN_MESSAGE_LIST_ACTIVITY" />
+                <action android:name="ACTION_CUSTOM_CHAT_INTENT" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

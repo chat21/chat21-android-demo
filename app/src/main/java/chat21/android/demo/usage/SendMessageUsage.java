@@ -21,7 +21,7 @@ public class SendMessageUsage {
 
 
         ChatManager.getInstance()
-                .sendTextMessage("UID", "Andrea Leo", "hello world!");
+                .sendTextMessage("UID", "Andrea Leo", "hello world!", Message.DIRECT_CHANNEL_TYPE);
 
 
     }
