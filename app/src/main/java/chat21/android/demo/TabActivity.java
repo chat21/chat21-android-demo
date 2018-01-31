@@ -8,14 +8,13 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import chat21.android.core.users.models.ChatUser;
-import chat21.android.core.users.models.IChatUser;
+import java.util.HashMap;
+import java.util.Map;
+
 import chat21.android.ui.ChatUI;
-import chat21.android.utils.StringUtils;
 
 public class TabActivity extends AppCompatActivity {
 
@@ -55,8 +54,6 @@ public class TabActivity extends AppCompatActivity {
         ChatUI.getInstance().processRemoteNotification(getIntent());
     }
 
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -79,27 +76,44 @@ public class TabActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
+        private int tabsCount;
+        private Map<String, Item> tabsMap;
+        private String[] tabsTags;
+
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
+
+            tabsMap = new HashMap<>();
+
+            // create a map with all tabs
+            tabsMap.put(getString(R.string.tag_home),
+                    new Item(getString(R.string.tab_home_title), 1));
+            tabsMap.put(getString(R.string.tag_chat),
+                    new Item(getString(R.string.tab_chat_title), 1));
+            tabsMap.put(getString(R.string.tag_profile),
+                    new Item(getString(R.string.tab_profile_title), 1));
+
+            // retrieve tab tags
+            tabsTags = getResources().getStringArray(R.array.tab_tags);
+            tabsCount = tabsTags.length; // count tab tags
         }
 
         @Override
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
 
-            if (position == 0) {
+            String tabTag = getTagByPosition(position);
+            if (tabTag.equals(getString(R.string.tag_home))) {
                 return HomeFragment.newInstance();
-            } else if (position == 1) {
+            } else if (tabTag.equals(getString(R.string.tag_chat))) {
                 return ChatFragment.newInstance();
-            } else if (position == 2) {
+            } else if (tabTag.equals(getString(R.string.tag_profile))) {
                 return UserProfileFragment.newInstance();
             } else {
                 // default load home
@@ -109,20 +123,59 @@ public class TabActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 3;
+            return tabsCount;
+        }
+
+        private String getTagByPosition(int position) {
+            return tabsTags[position];
+        }
+
+        private String getTitleByTag(String tag) {
+            return tabsMap.get(tag).getTitle();
+        }
+
+        private int getIconByTag(String tag) {
+            return tabsMap.get(tag).getIcon();
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "HOME";
-                case 1:
-                    return "CHAT";
-                case 2:
-                    return "PROFILE";
+            String tabTag = getTagByPosition(position);
+            return getTitleByTag(tabTag);
+        }
+
+        private class Item {
+            private String title;
+            private int icon;
+
+            private Item(String title, int icon) {
+                setTitle(title);
+                setIcon(icon);
             }
-            return null;
+
+            public String getTitle() {
+                return title;
+            }
+
+            public void setTitle(String title) {
+                this.title = title;
+            }
+
+            public int getIcon() {
+                return icon;
+            }
+
+            public void setIcon(int icon) {
+                this.icon = icon;
+            }
+
+            @Override
+            public String toString() {
+                return "Item{" +
+                        "title='" + title + '\'' +
+                        ", icon='" + icon + '\'' +
+                        '}';
+            }
         }
     }
 }

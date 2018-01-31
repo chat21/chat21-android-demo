@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4
+- updated chat sdk to the last version
+- updated firebase to the last version (11.8.0)
+- updated play service to the last version (11.8.0)
+- removed support for vectors drawable
+- setting to show/hide tabs
+
 ## 1.3.2
 - updated chat sdk from 0.10.1 to 0.10.2
 - updated multidex support

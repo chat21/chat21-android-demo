@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="tag_home" translatable="false">TAB_HOME</string>
+    <string name="tag_chat" translatable="false">TAB_CHAT</string>
+    <string name="tag_profile" translatable="false">TAB_PROFILE</string>
+
+    <string name="tab_home_title" translatable="false">Home</string>
+    <string name="tab_chat_title" translatable="false">Chat</string>
+    <string name="tab_profile_title" translatable="false">Profile</string>
+
+    <!--just uncomment(comment) one of these to display(or not) the relative tab within the adapter-->
+    <string-array name="tab_tags" translatable="false">
+        <!--<item>@string/tag_home</item>-->
+        <item>@string/tag_chat</item>
+        <item>@string/tag_profile</item>
+    </string-array>
+</resources>
