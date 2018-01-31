@@ -8,13 +8,14 @@ import chat21.android.core.conversations.listeners.ConversationsListener;
 import chat21.android.core.conversations.models.Conversation;
 import chat21.android.core.exception.ChatRuntimeException;
 
-import static chat21.android.ui.groups.fragments.BottomSheetGroupAdminPanelMemberFragment.TAG;
 
 /**
  * Created by andrealeo on 05/01/18.
  */
 
 public class ConversationsHandlerUsage {
+
+    private static final String TAG = ConversationsHandlerUsage.class.getName();
 
 
     public void usageSimple() {
@@ -78,7 +79,7 @@ public class ConversationsHandlerUsage {
         conversationsHandler.addConversationsListener(conversationsListener);
 
 
-       // Remember to remove the listener
+        // Remember to remove the listener
         conversationsHandler.removeConversationsListener(conversationsListener);
         //or
         conversationsHandler.removeAllConversationsListeners();

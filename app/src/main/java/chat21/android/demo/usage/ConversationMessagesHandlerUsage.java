@@ -3,20 +3,18 @@ package chat21.android.demo.usage;
 import android.util.Log;
 
 import chat21.android.core.ChatManager;
-import chat21.android.core.conversations.listeners.ConversationsListener;
-import chat21.android.core.conversations.models.Conversation;
 import chat21.android.core.exception.ChatRuntimeException;
 import chat21.android.core.messages.handlers.ConversationMessagesHandler;
 import chat21.android.core.messages.listeners.ConversationMessagesListener;
 import chat21.android.core.messages.models.Message;
-
-import static chat21.android.ui.groups.fragments.BottomSheetGroupAdminPanelMemberFragment.TAG;
 
 /**
  * Created by andrealeo on 05/01/18.
  */
 
 public class ConversationMessagesHandlerUsage {
+
+    private static final String TAG = ConversationMessagesHandlerUsage.class.getName();
 
     public void usageSimple() {
 
@@ -37,7 +35,6 @@ public class ConversationMessagesHandlerUsage {
         };
 
         conversationMessagesHandler.connect(conversationMessagesListener);
-
 
 
         // Remember to remove the listener
