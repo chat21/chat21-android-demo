@@ -9,8 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="@dimen/chat_padding_normal">
+        android:orientation="horizontal">
 
         <!--picture-->
         <ImageView
@@ -21,7 +20,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/chat_margin_normal"
+            android:layout_marginLeft="@dimen/chat_margin_small"
             android:orientation="vertical">
 
             <!--fullname-->
@@ -34,6 +33,7 @@
             <!--email-->
             <TextView
                 android:id="@+id/email"
+                android:textSize="17sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
@@ -84,6 +84,7 @@
 
     <Button
         android:id="@+id/logout"
+        android:layout_marginTop="@dimen/chat_margin_normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
