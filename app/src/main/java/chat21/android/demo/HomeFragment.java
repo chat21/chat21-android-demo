@@ -63,14 +63,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void onStartChatActivityAction() {
-
-//        ChatManager.getInstance().getContactsSynchronizer().setContacts(DummyDataManager.getContacts()); // TODO: 19/12/17 remove this line
-//
-        //andrea.leo
-//        IChatUser andrealeo = new ChatUser("U4HL3GWjBsd8zLX4Vva0s7W2FN92", "Andrea Leo");
-//
-//        ChatManager.getInstance().getContactsSynchronizer().addContact(andrealeo);
-//
         // stats the chat
         ChatUI.getInstance().openConversationsListActivity();
     }
