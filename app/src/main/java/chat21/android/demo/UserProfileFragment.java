@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,16 +16,22 @@ import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 
 import chat21.android.core.ChatManager;
+import chat21.android.core.contacts.listeners.ContactListener;
+import chat21.android.core.contacts.synchronizers.ContactsSynchronizer;
+import chat21.android.core.exception.ChatRuntimeException;
 import chat21.android.core.users.models.IChatUser;
 import chat21.android.ui.login.listeners.OnLogoutClickListener;
 import chat21.android.utils.ChatUtils;
+import chat21.android.utils.DebugConstants;
 import chat21.android.utils.image.CropCircleTransformation;
+
+import static chat21.android.utils.DebugConstants.DEBUG_CONTACTS_SYNC;
 
 /**
  * Created by stefanodp91 on 08/01/18.
  */
 
-public class UserProfileFragment extends Fragment {
+public class UserProfileFragment extends Fragment implements ContactListener {
     private static final String TAG = UserProfileFragment.class.getName();
 
     private ImageView mProfilePicture;
@@ -36,6 +43,7 @@ public class UserProfileFragment extends Fragment {
     private Button mLogout;
 
     private IChatUser loggedUser;
+    private ContactsSynchronizer contactsSynchronizer;
 
     public UserProfileFragment() {
     }
@@ -47,6 +55,12 @@ public class UserProfileFragment extends Fragment {
         UserProfileFragment fragment = new UserProfileFragment();
 
         return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        contactsSynchronizer = ChatManager.getInstance().getContactsSynchronizer();
     }
 
     @Override
@@ -66,28 +80,25 @@ public class UserProfileFragment extends Fragment {
 
         loggedUser = ChatManager.getInstance().getLoggedUser();
 
+        contactsSynchronizer.upsertContactsListener(this);
+        Log.d(DEBUG_CONTACTS_SYNC, "  UserProfileFragment.onCreateView: contactsSynchronizer attached");
+        contactsSynchronizer.connect();
+
         return view;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        contactsSynchronizer.removeContactsListener(this);
+        Log.d(DEBUG_CONTACTS_SYNC, "  UserProfileFragment.onDestroy: contactsSynchronizer detached");
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // profile picture
-        Glide.with(getActivity().getApplicationContext())
-                .load(loggedUser.getProfilePictureUrl())
-                .placeholder(R.drawable.ic_person_avatar)
-                .bitmapTransform(new CropCircleTransformation(getActivity().getApplicationContext()))
-                .into(mProfilePicture);
-
-        // fullname
-        mFullName.setText(loggedUser.getFullName());
-
-        // email
-        mEmail.setText(loggedUser.getEmail());
-
-        // user id
-        mUserId.setText(loggedUser.getId());
+        updateUserUI(loggedUser);
 
         // app name
         mAppName.setText(getString(R.string.app_name));
@@ -125,6 +136,24 @@ public class UserProfileFragment extends Fragment {
         });
     }
 
+    private void updateUserUI(IChatUser user) {
+        // profile picture
+        Glide.with(getActivity().getApplicationContext())
+                .load(user.getProfilePictureUrl())
+                .placeholder(R.drawable.ic_person_avatar)
+                .bitmapTransform(new CropCircleTransformation(getActivity().getApplicationContext()))
+                .into(mProfilePicture);
+
+        // fullname
+        mFullName.setText(user.getFullName());
+
+        // email
+        mEmail.setText(user.getEmail());
+
+        // user id
+        mUserId.setText(user.getId());
+    }
+
     private void performLogout(OnLogoutClickListener onLogoutClickListener) {
 
         // sign out from firebase
@@ -140,5 +169,25 @@ public class UserProfileFragment extends Fragment {
         ChatManager.getInstance().dispose();
 
         onLogoutClickListener.onLogoutClicked();
+    }
+
+    @Override
+    public void onContactReceived(IChatUser contact, ChatRuntimeException e) {
+        // do nothing
+    }
+
+    @Override
+    public void onContactChanged(IChatUser contact, ChatRuntimeException e) {
+        if (e == null) {
+            if (contact.getId().equals(this.loggedUser.getId())) {
+                this.loggedUser = ChatManager.getInstance().getLoggedUser();
+                updateUserUI(this.loggedUser);
+            }
+        }
+    }
+
+    @Override
+    public void onContactRemoved(IChatUser contact, ChatRuntimeException e) {
+        // do nothing
     }
 }
