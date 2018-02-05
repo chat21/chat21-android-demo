@@ -15,17 +15,7 @@ import chat21.android.core.users.models.IChatUser;
 
 public class DummyDataManager {
 
-//    private static final int LOGGED_USER_ID = 0;
     private static final int CONTACT_ID = 3;
-
-//    public static IChatUser getLoggedUser() {
-//        PersonGenerator generator = new PersonGenerator();
-//
-//        IChatUser loggedUser = convertPersonToChatUser(LOGGED_USER_ID,
-//                generator.getPeople().get(LOGGED_USER_ID));
-//
-//        return loggedUser;
-//    }
 
     public static IChatUser getContact() {
         PersonGenerator generator = new PersonGenerator();
@@ -36,23 +26,6 @@ public class DummyDataManager {
         return loggedUser;
     }
 
-//    public static List<IChatUser> getContacts() {
-//        List<IChatUser> contacts = new ArrayList<>();
-//
-//        PersonGenerator generator = new PersonGenerator();
-//
-//        // starts from the second item.
-//        // the first one is the logged user
-//        for (int i = 1; i < generator.getPeople().size(); i++) {
-//
-//            IChatUser chatUser = convertPersonToChatUser(i, generator.getPeople().get(i));
-//
-//            contacts.add(chatUser);
-//        }
-//
-//        return contacts;
-//    }
-//
     private static IChatUser convertPersonToChatUser(int counter, PersonGenerator.Person person) {
         IChatUser chatUser = new ChatUser();
 
