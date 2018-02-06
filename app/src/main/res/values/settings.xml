@@ -11,7 +11,7 @@
 
     <!--just uncomment(comment) one of these to display(or not) the relative tab within the adapter-->
     <string-array name="tab_tags" translatable="false">
-        <!--<item>@string/tag_home</item>-->
+        <item>@string/tag_home</item>
         <item>@string/tag_chat</item>
         <item>@string/tag_profile</item>
     </string-array>

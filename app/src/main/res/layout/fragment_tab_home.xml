@@ -19,11 +19,11 @@
             android:layout_height="wrap_content"
             android:text="@string/fragment_tab_home_direct_message_button_label" />
 
-        <Button
-            android:id="@+id/start_chat_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/fragment_tab_home_new_chat_activity_button_label" />
+        <!--<Button-->
+            <!--android:id="@+id/start_chat_activity"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/fragment_tab_home_new_chat_activity_button_label" />-->
 
     </LinearLayout>
 

@@ -1,5 +1,6 @@
 package chat21.android.demo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,11 +11,9 @@ import android.widget.Button;
 import chat21.android.core.contacts.synchronizers.ContactsFirestoreSynchronizer;
 import chat21.android.core.users.models.IChatUser;
 import chat21.android.ui.ChatUI;
+import chat21.android.ui.contacts.activites.ContactListActivity;
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
-
-    public HomeFragment() {
-    }
+public class HomeFragment extends Fragment {
 
     /**
      * Returns a new instance of this fragment.
@@ -31,39 +30,27 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         // direct message activity
         Button mStartDirectMessage = (Button) rootView.findViewById(R.id.direct_message);
-        mStartDirectMessage.setOnClickListener(this);
+        mStartDirectMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                ContactsFirestoreSynchronizer ch = new ContactsFirestoreSynchronizer();
+//                ch.getAllContacts();
 
-        // start the chat with an activity
-        Button mStartChatActivity = (Button) rootView.findViewById(R.id.start_chat_activity);
-        mStartChatActivity.setOnClickListener(this);
+                Intent intent = new Intent(getActivity().getApplicationContext(), ContactListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+//        // start the chat with an activity
+//        Button mStartChatActivity = (Button) rootView.findViewById(R.id.start_chat_activity);
+//        mStartChatActivity.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // stats the chat
+//                ChatUI.getInstance().openConversationsListActivity();
+//            }
+//        });
 
         return rootView;
-    }
-
-    @Override
-    public void onClick(View view) {
-        int id = view.getId();
-
-        if (id == R.id.direct_message) {
-            onDirectMessageAction();
-        } else if (id == R.id.start_chat_activity) {
-            onStartChatActivityAction();
-        }
-    }
-
-    private void onDirectMessageAction() {
-
-        ContactsFirestoreSynchronizer ch = new ContactsFirestoreSynchronizer();
-        ch.getAllContacts();
-
-        //laurice_hoadley
-        IChatUser contact = DummyDataManager.getContact();
-
-        ChatUI.getInstance().openConversationMessagesActivity(contact);
-    }
-
-    private void onStartChatActivityAction() {
-        // stats the chat
-        ChatUI.getInstance().openConversationsListActivity();
     }
 }
