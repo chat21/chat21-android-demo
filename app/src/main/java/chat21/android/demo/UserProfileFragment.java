@@ -59,8 +59,11 @@ public class UserProfileFragment extends Fragment implements ContactListener {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         contactsSynchronizer = ChatManager.getInstance().getContactsSynchronizer();
+        contactsSynchronizer.upsertContactsListener(this);
+        Log.d(DEBUG_CONTACTS_SYNC, "  UserProfileFragment.onCreateView: contactsSynchronizer attached");
+
+        super.onCreate(savedInstanceState);
     }
 
     @Override
@@ -80,8 +83,6 @@ public class UserProfileFragment extends Fragment implements ContactListener {
 
         loggedUser = ChatManager.getInstance().getLoggedUser();
 
-        contactsSynchronizer.upsertContactsListener(this);
-        Log.d(DEBUG_CONTACTS_SYNC, "  UserProfileFragment.onCreateView: contactsSynchronizer attached");
         contactsSynchronizer.connect();
 
         return view;
@@ -89,9 +90,13 @@ public class UserProfileFragment extends Fragment implements ContactListener {
 
     @Override
     public void onDestroy() {
+
+        if(contactsSynchronizer != null) {
+            contactsSynchronizer.removeContactsListener(this);
+            Log.d(DEBUG_CONTACTS_SYNC, "  UserProfileFragment.onDestroy: contactsSynchronizer detached");
+        }
+
         super.onDestroy();
-        contactsSynchronizer.removeContactsListener(this);
-        Log.d(DEBUG_CONTACTS_SYNC, "  UserProfileFragment.onDestroy: contactsSynchronizer detached");
     }
 
     @Override
