@@ -8,7 +8,7 @@ android {
         applicationId "chat21.android.demo"
         minSdkVersion 19
         targetSdkVersion 22
-        versionCode 1
+        versionCode 2
         versionName "1.0"
 
 //        // vectors drawable support
@@ -22,7 +22,6 @@ android {
     // bugfix for
     // https://stackoverflow.com/questions/36441030/android-studio-build-signed-app-error
     dexOptions {
-        incremental true
         javaMaxHeapSize "4g"
     }
 

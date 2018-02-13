@@ -1,34 +1,42 @@
 # Changelog
 
-## 1.4
+## v.: 1.0 b.: 2
+- fixed images metadata
+- fixed foreground notification for the active conversation
+- fixed unread conversation from notification
+
+## v.: 1.0 b.: 1
+- full refactoring
+
+## 0.3 -SNAPSHOT
 - updated chat sdk to the last version
 - updated firebase to the last version (11.8.0)
 - updated play service to the last version (11.8.0)
 - removed support for vectors drawable
 - setting to show/hide tabs
 
-## 1.3.2
+## 0.2.1 -SNAPSHOT
 - updated chat sdk from 0.10.1 to 0.10.2
 - updated multidex support
 
-## 1.3.1
+## 0.2 -SNAPSHOT
 - fixed dependecies
 - fixed multidex support
 - fixed chat settings
 
-## 1.3
+## 0.1.3 -SNAPSHOT
 - updated demo package
 - fixed conversWith issue
 - fixed sender layout timestamp
 - updated chat sdk
 - added chat settings
 
-## 1.2
+## 0.1.2 -SNAPSHOT
 - changed chat package
 
-## 1.1
+## 0.1.1 -SNAPSHOT
 - new send messages panel
 - new chat sdk init
 
-## 1.0
+## 0.1.0 -SNAPSHOT
 - create the project
