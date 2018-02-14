@@ -4,6 +4,7 @@
 - fixed images metadata
 - fixed foreground notification for the active conversation
 - fixed unread conversation from notification
+- fixed timestamp position with very long text for recipient
 
 ## v.: 1.0 b.: 1
 - full refactoring
