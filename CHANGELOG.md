@@ -2,8 +2,8 @@
 
 ## v.: 1.0 b.: 3
 - group id within group admin panel
-- boosted layout (following guidelines)
--
+- boosted layouts (following guidelines)
+- login/signup email validation
 
 ## v.: 1.0 b.: 2
 - fixed images metadata

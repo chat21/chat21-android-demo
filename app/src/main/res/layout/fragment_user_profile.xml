@@ -20,7 +20,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/chat_margin_small"
+            android:layout_marginStart="@dimen/chat_margin_small"
             android:orientation="vertical">
 
             <!--fullname-->
@@ -53,17 +53,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ID"
+            android:text="@string/fragment_user_profile_id_label"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/userid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/chat_margin_normal"
+            android:layout_marginStart="@dimen/chat_margin_normal"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
     </LinearLayout>
 
     <TextView
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        android:textSize="15dp" />
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/app_version"
@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="15dp" />
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/logout"
@@ -88,6 +88,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="logout" />
+        android:text="@string/fragment_user_profile_logout_label" />
 
 </LinearLayout>
