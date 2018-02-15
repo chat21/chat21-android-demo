@@ -1,5 +1,10 @@
 # Changelog
 
+## v.: 1.0 b.: 3
+- group id within group admin panel
+- boosted layout (following guidelines)
+-
+
 ## v.: 1.0 b.: 2
 - fixed images metadata
 - fixed foreground notification for the active conversation
