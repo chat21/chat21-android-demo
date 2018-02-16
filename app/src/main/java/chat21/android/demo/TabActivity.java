@@ -8,12 +8,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import chat21.android.core.ChatManager;
 import chat21.android.ui.ChatUI;
 
 public class TabActivity extends AppCompatActivity {
@@ -52,9 +51,22 @@ public class TabActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
         ChatUI.getInstance().processRemoteNotification(getIntent());
+
     }
 
-//    @Override
+    @Override
+    protected void onResume() {
+        ChatManager.getInstance().getMyPresenceHandler().connect();
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        ChatManager.getInstance().getMyPresenceHandler().dispose();
+        super.onDestroy();
+    }
+
+    //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        // Inflate the menu; this adds items to the action bar if it is present.
 //        getMenuInflater().inflate(R.menu.menu_tab, menu);
