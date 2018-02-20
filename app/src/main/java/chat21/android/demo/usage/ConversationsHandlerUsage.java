@@ -2,11 +2,11 @@ package chat21.android.demo.usage;
 
 import android.util.Log;
 
-import chat21.android.core.ChatManager;
-import chat21.android.core.conversations.ConversationsHandler;
-import chat21.android.core.conversations.listeners.ConversationsListener;
-import chat21.android.core.conversations.models.Conversation;
-import chat21.android.core.exception.ChatRuntimeException;
+import org.chat21.android.core.ChatManager;
+import org.chat21.android.core.conversations.ConversationsHandler;
+import org.chat21.android.core.conversations.listeners.ConversationsListener;
+import org.chat21.android.core.conversations.models.Conversation;
+import org.chat21.android.core.exception.ChatRuntimeException;
 
 
 /**

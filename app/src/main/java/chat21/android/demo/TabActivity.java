@@ -12,8 +12,8 @@ import android.support.v7.widget.Toolbar;
 import java.util.HashMap;
 import java.util.Map;
 
-import chat21.android.core.ChatManager;
-import chat21.android.ui.ChatUI;
+import org.chat21.android.core.ChatManager;
+import org.chat21.android.ui.ChatUI;
 
 public class TabActivity extends AppCompatActivity {
 

@@ -2,9 +2,9 @@ package chat21.android.demo;
 
 import android.util.Log;
 
-import chat21.android.ui.login.activities.ChatSplashActivity;
+import org.chat21.android.ui.login.activities.ChatSplashActivity;
 
-import static chat21.android.utils.DebugConstants.DEBUG_LOGIN;
+import static org.chat21.android.utils.DebugConstants.DEBUG_LOGIN;
 
 /**
  * Created by stefanodp91 on 21/12/17.

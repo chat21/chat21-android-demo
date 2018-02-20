@@ -10,14 +10,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
-import chat21.android.core.ChatManager;
-import chat21.android.core.users.models.IChatUser;
-import chat21.android.ui.ChatUI;
-import chat21.android.ui.contacts.activites.ContactListActivity;
-import chat21.android.ui.conversations.listeners.OnNewConversationClickListener;
-import chat21.android.utils.IOUtils;
+import org.chat21.android.core.ChatManager;
+import org.chat21.android.core.users.models.IChatUser;
+import org.chat21.android.ui.ChatUI;
+import org.chat21.android.ui.contacts.activites.ContactListActivity;
+import org.chat21.android.ui.conversations.listeners.OnNewConversationClickListener;
+import org.chat21.android.utils.IOUtils;
 
-import static chat21.android.core.ChatManager._SERIALIZED_CHAT_CONFIGURATION_LOGGED_USER;
+import static org.chat21.android.core.ChatManager._SERIALIZED_CHAT_CONFIGURATION_LOGGED_USER;
 
 /**
  * Created by stefanodp91 on 25/09/17.

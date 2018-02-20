@@ -8,10 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import chat21.android.core.contacts.synchronizers.ContactsFirestoreSynchronizer;
-import chat21.android.core.users.models.IChatUser;
-import chat21.android.ui.ChatUI;
-import chat21.android.ui.contacts.activites.ContactListActivity;
+import org.chat21.android.ui.contacts.activites.ContactListActivity;
 
 public class HomeFragment extends Fragment {
 

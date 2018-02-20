@@ -3,18 +3,11 @@ package chat21.android.demo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import chat21.android.core.ChatManager;
-import chat21.android.core.presence.MyPresenceHandler;
-import chat21.android.core.presence.listeners.MyPresenceListener;
-import chat21.android.ui.ChatUI;
-
-import static chat21.android.utils.DebugConstants.DEBUG_MY_PRESENCE;
-import static chat21.android.utils.DebugConstants.DEBUG_USER_PRESENCE;
+import org.chat21.android.ui.ChatUI;
 
 /**
  * A fragment containing the chat.

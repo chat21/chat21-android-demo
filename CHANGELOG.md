@@ -1,9 +1,14 @@
 # Changelog
 
+## v.: 1.0 b.: 4
+- changed library package
+- fixed crash on android oreo
+
 ## v.: 1.0 b.: 3
 - group id within group admin panel
 - boosted layouts (following guidelines)
 - login/signup email validation
+- fixed logged user presence on shutting down
 
 ## v.: 1.0 b.: 2
 - fixed images metadata

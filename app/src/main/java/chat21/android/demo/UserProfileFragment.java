@@ -15,17 +15,16 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 
-import chat21.android.core.ChatManager;
-import chat21.android.core.contacts.listeners.ContactListener;
-import chat21.android.core.contacts.synchronizers.ContactsSynchronizer;
-import chat21.android.core.exception.ChatRuntimeException;
-import chat21.android.core.users.models.IChatUser;
-import chat21.android.ui.login.listeners.OnLogoutClickListener;
-import chat21.android.utils.ChatUtils;
-import chat21.android.utils.DebugConstants;
-import chat21.android.utils.image.CropCircleTransformation;
+import org.chat21.android.core.ChatManager;
+import org.chat21.android.core.contacts.listeners.ContactListener;
+import org.chat21.android.core.contacts.synchronizers.ContactsSynchronizer;
+import org.chat21.android.core.exception.ChatRuntimeException;
+import org.chat21.android.core.users.models.IChatUser;
+import org.chat21.android.ui.login.listeners.OnLogoutClickListener;
+import org.chat21.android.utils.ChatUtils;
+import org.chat21.android.utils.image.CropCircleTransformation;
 
-import static chat21.android.utils.DebugConstants.DEBUG_CONTACTS_SYNC;
+import static org.chat21.android.utils.DebugConstants.DEBUG_CONTACTS_SYNC;
 
 /**
  * Created by stefanodp91 on 08/01/18.

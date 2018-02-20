@@ -1,6 +1,6 @@
 package chat21.android.demo.usageui;
 
-import chat21.android.ui.ChatUI;
+import org.chat21.android.ui.ChatUI;
 
 /**
  * Created by andrealeo on 16/01/18.
