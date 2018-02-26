@@ -1,6 +1,9 @@
 # Changelog
 
-## v.: 1.0 b.: 4
+## v.: 1.0.1 b.: 5
+- updated with last library changes (chat sdk v.: 1.0.1 b.:28)
+
+## v.: 1.0.0 b.: 4
 - changed library package
 - fixed crash on android oreo
 
