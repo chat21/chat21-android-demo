@@ -84,6 +84,7 @@
 
     <Button
         android:id="@+id/logout"
+        android:theme="@style/AppTheme.Button.Flat"
         android:layout_marginTop="@dimen/chat_margin_normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
