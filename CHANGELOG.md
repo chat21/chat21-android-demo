@@ -5,6 +5,7 @@
 - fixed home background color
 - fixed profile background color
 - fixed home button text
+- fixed tab indicator length and color
 
 ## v.: 1.0.1 b.: 5
 - updated with last library changes (chat sdk v.: 1.0.1 b.:28)
