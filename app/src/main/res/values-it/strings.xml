@@ -2,7 +2,7 @@
     <string name="app_name">Chat21</string>
     <!--<string name="action_settings">Impostazioni</string>-->
 
-    <string name="fragment_tab_home_direct_message_button_label">Selezionare un contatto e conversare</string>
+    <string name="fragment_tab_home_direct_message_button_label">Seleziona un contatto</string>
     <string name="fragment_user_profile_id_label">ID</string>
     <string name="fragment_user_profile_logout_label">logout</string>
     <!--<string name="fragment_tab_home_new_chat_activity_button_label">Avvia in activity</string>-->

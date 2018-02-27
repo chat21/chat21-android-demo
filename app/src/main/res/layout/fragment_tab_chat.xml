@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/coordinator"
     android:layout_width="match_parent"
+    android:background="@color/windowBackground"
     android:layout_height="match_parent"
-    tools:context="it.frontiere21.android.chat21.chat21demo.it.chat21.android.demo.ChatFragment">
+    tools:context="chat21.android.demo.ChatFragment">
 
     <FrameLayout
         android:id="@+id/container"
