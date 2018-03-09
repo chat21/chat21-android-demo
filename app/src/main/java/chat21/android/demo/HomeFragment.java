@@ -27,10 +27,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_tab_home, container, false);
 
-        // direct message activity
-        Button mStartDirectMessage = (Button) rootView.findViewById(R.id.direct_message);
-        mStartDirectMessage.setOnClickListener(this);
-
         // start the chat with an activity
         Button mStartChatActivity = (Button) rootView.findViewById(R.id.start_chat_activity);
         mStartChatActivity.setOnClickListener(this);
@@ -42,18 +38,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         int id = view.getId();
 
-        if (id == R.id.direct_message) {
-            onDirectMessageAction();
-        } else if (id == R.id.start_chat_activity) {
+         if (id == R.id.start_chat_activity) {
             onStartChatActivityAction();
         }
-    }
-
-    private void onDirectMessageAction() {
-
-        String contactId = DummyDataManager.getContacts().get(3).getId();
-
-        ChatManager.getInstance().showDirectConversationActivity(contactId);
     }
 
     private void onStartChatActivityAction() {
