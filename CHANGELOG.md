@@ -1,5 +1,8 @@
 # Changelog
 
+## v.: 1.0.3 b.: 7
+- updated with last library changes (chat sdk v.: 1.0.5 b.:32)
+
 ## v.: 1.0.2 b.: 6
 - fixed conversation item divider
 - fixed home background color

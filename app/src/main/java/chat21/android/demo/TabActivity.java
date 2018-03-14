@@ -9,13 +9,14 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.chat21.android.core.ChatManager;
 import org.chat21.android.ui.ChatUI;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TabActivity extends AppCompatActivity {
+    private static final String TAG = TabActivity.class.getName();
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -51,7 +52,6 @@ public class TabActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
         ChatUI.getInstance().processRemoteNotification(getIntent());
-
     }
 
     @Override
