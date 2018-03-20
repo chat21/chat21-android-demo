@@ -1,5 +1,8 @@
 # Changelog
 
+## v.: 1.0.4 b.: 9
+- managed uri click
+
 ## v.: 1.0.3 b.: 8
 - updated with last library changes (chat sdk v.: 1.0.6 b.:33)
 
