@@ -2,14 +2,25 @@
 
 ## Features
 
-With the Chat21 SDK Demo app you can:
-- send a direct message (one to one) to a default user;
-- see how the Chat21 SDK works winthin an activity;
-- see how the Chat21 SDK works winthin a fragment;
+With Chat21 Android SDK you can:
 
-## Let's see it in action
+- Send a direct message to a user (one to one message)
+- Emoji support
+- Attach pictures support
+- Create group chat
+- View the messages history
+- View the group list
+- The read receipts feature allows your users to see when a message has been sent, delivered and read
+- Conversations list view with the last messages sent (like Whatsapp)
+- With the Presense Manager you can view when a user is online or offline and the inactivity period
+- View the user profile with fullname and email
+- Login with email and password (Use firebase email and password authentication method )
+- Signup with fullname, email, password and profile picture
+- Contacts list view with fulltext search for fullname field
 
-Download the [sample app](https://github.com/chat21/chat21-android-demo/blob/master/releases/app-release.apk) for a live demo
+### Google Play Demo
+
+[![get_it](http://evolvex.it/mobyx/images/nav/gplay-blk.png)](https://play.google.com/store/apps/details?id=chat21.android.demo)
 
 <img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/screen1.png" width="250"> | <img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/screen2.png" width="250"> | <img src="https://github.com/chat21/chat21-android-demo/blob/master/resources/screen3.png" width="250">
 
@@ -18,15 +29,6 @@ Download the [sample app](https://github.com/chat21/chat21-android-demo/blob/mas
 
 ## Add Chat21 SDK to your project
 
-Follow the [readme](https://github.com/chat21/android-sdk/blob/0.10.x/README.md) to add the Chat21 SDK to your project 
+Follow the [readme](https://github.com/chat21/chat21-android-sdk/blob/master/README.md) to add the Chat21 SDK to your project
 
-## Limitations
-
-This sample project uses fake users that do not have real authentication.
-
-For this reason, in the demo, it is ***not*** possible:
-
-- send pictures
-- send / receive push notifications
-
-However, image forwarding and push notifications ***are supported*** with real users.
+More details at http://www.chat21.org/
