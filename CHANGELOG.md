@@ -1,5 +1,13 @@
 # Changelog
 
+## v.: 1.0.6 b.: 11
+- updated with last library changes (chat sdk v.: 1.0.6 b.:33)
+- fixed retrieve user
+- fixed contact list within group admin panel
+
+## v.: 1.0.5 b.: 10
+- multiple instance id
+
 ## v.: 1.0.4 b.: 9
 - managed uri click
 

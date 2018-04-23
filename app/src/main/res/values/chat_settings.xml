@@ -8,4 +8,5 @@
 
     <!--unique identifier of the app in which it is messaging-->
     <string name="chat_firebase_appId" translatable="false">tilechat</string>
+    <!--<string name="chat_firebase_appId" translatable="false">got_chat</string>-->
 </resources>
