@@ -1,5 +1,8 @@
 # Changelog
 
+## v.: 1.0.7 b.: 12
+- updated with last library changes (chat sdk v.: 1.0.7 b.34)
+
 ## v.: 1.0.6 b.: 11
 - updated with last library changes (chat sdk v.: 1.0.6 b.:33)
 - fixed retrieve user
