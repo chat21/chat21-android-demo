@@ -1,5 +1,8 @@
 # Changelog
 
+## v.: 1.0.8 b.: 14
+- updated with last library changes (chat sdk v.: 1.0.9 b.37)
+
 ## v.: 1.0.7 b.: 12
 - updated with last library changes (chat sdk v.: 1.0.7 b.34)
 
