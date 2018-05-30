@@ -8,7 +8,7 @@ android {
         applicationId "chat21.android.demo"
         minSdkVersion 19
         targetSdkVersion 22
-        versionCode 14
+        versionCode 15
         versionName "1.0.9"
 
 //        // vectors drawable support
