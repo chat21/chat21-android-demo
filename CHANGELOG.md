@@ -3,6 +3,7 @@
 ## v.: 1.0.10 b.: 16
 - updated with last library changes (chat sdk v.: 1.0.11 b.: 39)
 - cloud function support
+- removed swipe on pager
 
 ## v.: 1.0.9 b.: 15
 - updated with last library changes (chat sdk v.: 1.0.10 b.38)
