@@ -4,7 +4,7 @@
     <string name="chat_firebase_url" translatable="false">https://chat-v2-dev.firebaseio.com</string>
 
     <string name="chat_firebase_cloud_functions_url" translatable="false">https://us-central1-chat-v2-dev.cloudfunctions.net</string>
-    
+
 
     <!--firebase storage reference (optional)-->
     <string name="chat_firebase_storage_bucket" translatable="false">gs://chat-v2-dev.appspot.com</string>
