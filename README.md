@@ -1,3 +1,5 @@
+Chat21 is the core of the open source live chat platform [Tiledesk.com](http://www.tiledesk.com).
+
 # Chat21 SDK Demo 
 
 ## Features
@@ -32,3 +34,6 @@ With Chat21 Android SDK you can:
 Follow the [readme](https://github.com/chat21/chat21-android-sdk/blob/master/README.md) to add the Chat21 SDK to your project
 
 More details at http://www.chat21.org/
+
+## App Renaming
+Remember to rename the value of applicationId "tiledesk.android" into build.gradle
