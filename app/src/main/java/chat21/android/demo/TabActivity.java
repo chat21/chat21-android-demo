@@ -15,7 +15,7 @@ import org.chat21.android.ui.ChatUI;
 import java.util.HashMap;
 import java.util.Map;
 
-import chat21.android.demo.user_profile.UserProfileFragment;
+import chat21.android.demo.user_profile.show.ShowUserProfileFragment;
 
 public class TabActivity extends AppCompatActivity {
     private static final String TAG = TabActivity.class.getName();
@@ -128,7 +128,7 @@ public class TabActivity extends AppCompatActivity {
             } else if (tabTag.equals(getString(R.string.tag_chat))) {
                 return ChatFragment.newInstance();
             } else if (tabTag.equals(getString(R.string.tag_profile))) {
-                return Fragment.instantiate(TabActivity.this, UserProfileFragment.class.getName());
+                return ShowUserProfileFragment.newInstance();
             } else {
                 // default load home
                 return HomeFragment.newInstance();

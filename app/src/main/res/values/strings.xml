@@ -5,5 +5,5 @@
     <string name="fragment_tab_home_direct_message_button_label">Select a contact</string>
     <string name="fragment_user_profile_id_label">ID</string>
     <string name="fragment_user_profile_logout_label">logout</string>
-    <!--<string name="fragment_tab_home_new_chat_activity_button_label">Start with an activity</string>-->
+    <string name="activity_edit_user_profile_activity_title">Profile</string>
 </resources>

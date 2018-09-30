@@ -2,11 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:background="@color/windowBackground"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/padding_normal"
+    android:paddingTop="@dimen/padding_normal"
+    android:paddingRight="@dimen/padding_normal"
+    android:paddingBottom="@dimen/padding_normal"
     tools:context="chat21.android.demo.HomeFragment">
 
     <LinearLayout
@@ -16,16 +16,16 @@
 
         <Button
             android:id="@+id/direct_message"
-            android:theme="@style/AppTheme.Button.Flat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/fragment_tab_home_direct_message_button_label" />
+            android:text="@string/fragment_tab_home_direct_message_button_label"
+            android:theme="@style/AppTheme.Button.Flat" />
 
         <!--<Button-->
-            <!--android:id="@+id/start_chat_activity"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@string/fragment_tab_home_new_chat_activity_button_label" />-->
+        <!--android:id="@+id/start_chat_activity"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/fragment_tab_home_new_chat_activity_button_label" />-->
 
     </LinearLayout>
 

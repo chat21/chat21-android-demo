@@ -38,6 +38,9 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".user_profile.edit.EditUserProfileActivity"
+            android:label="@string/activity_edit_user_profile_activity_title"></activity>
     </application>
 
 </manifest>
